@@ -29,7 +29,7 @@ namespace Code2Profile.VoiceAttack
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyPress SetDuraction(decimal duration)
+        public ActionKeyPress SetDuration(decimal duration)
         {
             Duration = Math.Round(duration, 3);
             return this;

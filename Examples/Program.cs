@@ -19,7 +19,7 @@ namespace Examples
                 .AddCommand(new CommandBuilder()
                     .UsePhrase("Hello there")
                     .AddAction(new ActionKeyPress(Keys.A)
-                        .SetDuraction(1))
+                        .SetDuration(1))
                     .AddAction(new ActionPause(2))
                     .Build())
                 .AddCommand(new CommandBuilder()
