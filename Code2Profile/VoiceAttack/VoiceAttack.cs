@@ -24,8 +24,8 @@ namespace Code2Profile.VoiceAttack
             vap.Name = name;
             vap.Id = Guid.NewGuid().ToString();
             vap.ExportVAVersion = "1.7.5";
-            vap.ExportOSVersionMajor = (byte)Environment.OSVersion.Version.Major;
-            vap.ExportOSVersionMinor = (byte)Environment.OSVersion.Version.Minor;
+            vap.ExportOSVersionMajor = Environment.OSVersion.Version.Major;
+            vap.ExportOSVersionMinor = Environment.OSVersion.Version.Minor;
             vap.Commands = new List<ProfileCommand>().ToArray();
             vap.LastEditedCommand = Guid.Empty.ToString();
             vap.CategoryGroups = "";
@@ -67,7 +67,6 @@ namespace Code2Profile.VoiceAttack
                 //a.KeyCodes = new ProfileCommandCommandActionKeyCodes();
                 a.Caption = "";
                 a._caption = "";
-                a.Context = "";
                 a.RandomSounds = "";
                 actions.Add(a);
             }
@@ -87,7 +86,7 @@ namespace Code2Profile.VoiceAttack
         /// </summary>
         /// <param name="outputDirectory">The output directory.</param>
         /// <returns></returns>
-        public VoiceAttackBuilder Export(DirectoryInfo outputDirectory)
+        public VoiceAttackBuilder BuildProfile(DirectoryInfo outputDirectory)
         {
             XmlSerializer xmlVap = new XmlSerializer(typeof(Profile));
             string xml = string.Empty;

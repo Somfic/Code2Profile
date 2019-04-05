@@ -28,7 +28,7 @@ namespace Code2Profile.VoiceAttack
         /// Build the command.
         /// </summary>
         /// <returns></returns>
-        public Command Build()
+        public Command BuildCommand()
         {
             command.ID = Guid.NewGuid();
             return command;

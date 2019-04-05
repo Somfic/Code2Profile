@@ -24,7 +24,7 @@ namespace Code2Profile.VoiceAttack
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyPress(byte key)
+        public ActionKeyPress(int key)
         {
             KeyCode = (Keys)key;
         }
@@ -66,7 +66,7 @@ namespace Code2Profile.VoiceAttack
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyDown(byte key)
+        public ActionKeyDown(int key)
         {
             KeyCode = (Keys)key;
         }
@@ -100,7 +100,7 @@ namespace Code2Profile.VoiceAttack
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyUp(byte key)
+        public ActionKeyUp(int key)
         {
             KeyCode = (Keys)key;
         }
@@ -141,6 +141,61 @@ namespace Code2Profile.VoiceAttack
                 Disabled = !Enabled,
                 Duration = Duration,
                 ActionType = ActionType
+            };
+        }
+    }
+
+    public class ActionSay : IAction
+    {
+        public ActionSay(string sentence)
+        {
+            Sentence = sentence;
+        }
+
+        public ActionSay SetVoice(string voice)
+        {
+            Voice = voice;
+            return this;
+        }
+
+        public ActionSay SetVolume(int volume)
+        {
+            Volume = volume;
+            return this;
+        }
+
+        public ActionSay SetSpeed(int speed)
+        {
+            Speed = speed;
+            return this;
+        }
+
+        public string Voice { get; internal set; } = "Default";
+
+        public int Volume { get; internal set; } = 100;
+
+        public int Speed { get; internal set; } = 0;
+
+        public Guid ID { get; internal set; } = Guid.NewGuid();
+
+        public bool Enabled { get; internal set; } = true;
+
+        public string ActionType => "Say";
+
+        public string Sentence { get; internal set; }
+
+        public ProfileCommandCommandAction GetAction()
+        {
+            return new ProfileCommandCommandAction()
+            {
+                Id = ID.ToString(),
+                Disabled = !Enabled,
+                ActionType = ActionType,
+                Context = Sentence,
+                Context3 = Guid.Empty.ToString(),
+                Context4 = Voice,
+                X = Volume,
+                Y = Speed
             };
         }
     }

@@ -20,39 +20,39 @@
 
         private bool overrideGlobalField;
 
-        private byte globalHotkeyIndexField;
+        private int globalHotkeyIndexField;
 
         private bool globalHotkeyEnabledField;
 
-        private byte globalHotkeyValueField;
+        private int globalHotkeyValueField;
 
-        private byte globalHotkeyShiftField;
+        private int globalHotkeyShiftField;
 
-        private byte globalHotkeyAltField;
+        private int globalHotkeyAltField;
 
-        private byte globalHotkeyCtrlField;
+        private int globalHotkeyCtrlField;
 
-        private byte globalHotkeyWinField;
+        private int globalHotkeyWinField;
 
         private bool globalHotkeyPassThruField;
 
         private bool overrideMouseField;
 
-        private byte mouseIndexField;
+        private int mouseIndexField;
 
         private bool overrideStopField;
 
         private bool stopCommandHotkeyEnabledField;
 
-        private byte stopCommandHotkeyValueField;
+        private int stopCommandHotkeyValueField;
 
-        private byte stopCommandHotkeyShiftField;
+        private int stopCommandHotkeyShiftField;
 
-        private byte stopCommandHotkeyAltField;
+        private int stopCommandHotkeyAltField;
 
-        private byte stopCommandHotkeyCtrlField;
+        private int stopCommandHotkeyCtrlField;
 
-        private byte stopCommandHotkeyWinField;
+        private int stopCommandHotkeyWinField;
 
         private bool stopCommandHotkeyPassThruField;
 
@@ -62,27 +62,27 @@
 
         private bool overrideJoystickGlobalField;
 
-        private byte globalJoystickIndexField;
+        private int globalJoystickIndexField;
 
-        private byte globalJoystickButtonField;
+        private int globalJoystickButtonField;
 
-        private byte globalJoystickNumberField;
+        private int globalJoystickNumberField;
 
-        private byte globalJoystickButton2Field;
+        private int globalJoystickButton2Field;
 
-        private byte globalJoystickNumber2Field;
+        private int globalJoystickNumber2Field;
 
         private object referencedProfileField;
 
         private string exportVAVersionField;
 
-        private byte exportOSVersionMajorField;
+        private int exportOSVersionMajorField;
 
-        private byte exportOSVersionMinorField;
+        private int exportOSVersionMinorField;
 
         private bool overrideConfidenceField;
 
-        private byte confidenceField;
+        private int confidenceField;
 
         private bool catchAllEnabledField;
 
@@ -108,13 +108,13 @@
 
         private string lastEditedCommandField;
 
-        private byte isField;
+        private int isField;
 
-        private byte ioField;
+        private int ioField;
 
-        private byte ipField;
+        private int ipField;
 
-        private byte beField;
+        private int beField;
 
         private bool unloadCommandEnabledField;
 
@@ -126,797 +126,437 @@
 
         private object productIDField;
 
-        private byte crField;
+        private int crField;
 
         private object internalIDField;
 
         /// <remarks/>
         public bool HasMB
         {
-            get
-            {
-                return this.hasMBField;
-            }
-            set
-            {
-                this.hasMBField = value;
-            }
+            get => hasMBField;
+            set => hasMBField = value;
         }
 
         /// <remarks/>
         public string Id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get => idField;
+            set => idField = value;
         }
 
         /// <remarks/>
         public string Name
         {
-            get
-            {
-                return this.nameField;
-            }
-            set
-            {
-                this.nameField = value;
-            }
+            get => nameField;
+            set => nameField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("Command", IsNullable = false)]
         public ProfileCommand[] Commands
         {
-            get
-            {
-                return this.commandsField;
-            }
-            set
-            {
-                this.commandsField = value;
-            }
+            get => commandsField;
+            set => commandsField = value;
         }
 
         /// <remarks/>
         public bool OverrideGlobal
         {
-            get
-            {
-                return this.overrideGlobalField;
-            }
-            set
-            {
-                this.overrideGlobalField = value;
-            }
+            get => overrideGlobalField;
+            set => overrideGlobalField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyIndex
+        public int GlobalHotkeyIndex
         {
-            get
-            {
-                return this.globalHotkeyIndexField;
-            }
-            set
-            {
-                this.globalHotkeyIndexField = value;
-            }
+            get => globalHotkeyIndexField;
+            set => globalHotkeyIndexField = value;
         }
 
         /// <remarks/>
         public bool GlobalHotkeyEnabled
         {
-            get
-            {
-                return this.globalHotkeyEnabledField;
-            }
-            set
-            {
-                this.globalHotkeyEnabledField = value;
-            }
+            get => globalHotkeyEnabledField;
+            set => globalHotkeyEnabledField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyValue
+        public int GlobalHotkeyValue
         {
-            get
-            {
-                return this.globalHotkeyValueField;
-            }
-            set
-            {
-                this.globalHotkeyValueField = value;
-            }
+            get => globalHotkeyValueField;
+            set => globalHotkeyValueField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyShift
+        public int GlobalHotkeyShift
         {
-            get
-            {
-                return this.globalHotkeyShiftField;
-            }
-            set
-            {
-                this.globalHotkeyShiftField = value;
-            }
+            get => globalHotkeyShiftField;
+            set => globalHotkeyShiftField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyAlt
+        public int GlobalHotkeyAlt
         {
-            get
-            {
-                return this.globalHotkeyAltField;
-            }
-            set
-            {
-                this.globalHotkeyAltField = value;
-            }
+            get => globalHotkeyAltField;
+            set => globalHotkeyAltField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyCtrl
+        public int GlobalHotkeyCtrl
         {
-            get
-            {
-                return this.globalHotkeyCtrlField;
-            }
-            set
-            {
-                this.globalHotkeyCtrlField = value;
-            }
+            get => globalHotkeyCtrlField;
+            set => globalHotkeyCtrlField = value;
         }
 
         /// <remarks/>
-        public byte GlobalHotkeyWin
+        public int GlobalHotkeyWin
         {
-            get
-            {
-                return this.globalHotkeyWinField;
-            }
-            set
-            {
-                this.globalHotkeyWinField = value;
-            }
+            get => globalHotkeyWinField;
+            set => globalHotkeyWinField = value;
         }
 
         /// <remarks/>
         public bool GlobalHotkeyPassThru
         {
-            get
-            {
-                return this.globalHotkeyPassThruField;
-            }
-            set
-            {
-                this.globalHotkeyPassThruField = value;
-            }
+            get => globalHotkeyPassThruField;
+            set => globalHotkeyPassThruField = value;
         }
 
         /// <remarks/>
         public bool OverrideMouse
         {
-            get
-            {
-                return this.overrideMouseField;
-            }
-            set
-            {
-                this.overrideMouseField = value;
-            }
+            get => overrideMouseField;
+            set => overrideMouseField = value;
         }
 
         /// <remarks/>
-        public byte MouseIndex
+        public int MouseIndex
         {
-            get
-            {
-                return this.mouseIndexField;
-            }
-            set
-            {
-                this.mouseIndexField = value;
-            }
+            get => mouseIndexField;
+            set => mouseIndexField = value;
         }
 
         /// <remarks/>
         public bool OverrideStop
         {
-            get
-            {
-                return this.overrideStopField;
-            }
-            set
-            {
-                this.overrideStopField = value;
-            }
+            get => overrideStopField;
+            set => overrideStopField = value;
         }
 
         /// <remarks/>
         public bool StopCommandHotkeyEnabled
         {
-            get
-            {
-                return this.stopCommandHotkeyEnabledField;
-            }
-            set
-            {
-                this.stopCommandHotkeyEnabledField = value;
-            }
+            get => stopCommandHotkeyEnabledField;
+            set => stopCommandHotkeyEnabledField = value;
         }
 
         /// <remarks/>
-        public byte StopCommandHotkeyValue
+        public int StopCommandHotkeyValue
         {
-            get
-            {
-                return this.stopCommandHotkeyValueField;
-            }
-            set
-            {
-                this.stopCommandHotkeyValueField = value;
-            }
+            get => stopCommandHotkeyValueField;
+            set => stopCommandHotkeyValueField = value;
         }
 
         /// <remarks/>
-        public byte StopCommandHotkeyShift
+        public int StopCommandHotkeyShift
         {
-            get
-            {
-                return this.stopCommandHotkeyShiftField;
-            }
-            set
-            {
-                this.stopCommandHotkeyShiftField = value;
-            }
+            get => stopCommandHotkeyShiftField;
+            set => stopCommandHotkeyShiftField = value;
         }
 
         /// <remarks/>
-        public byte StopCommandHotkeyAlt
+        public int StopCommandHotkeyAlt
         {
-            get
-            {
-                return this.stopCommandHotkeyAltField;
-            }
-            set
-            {
-                this.stopCommandHotkeyAltField = value;
-            }
+            get => stopCommandHotkeyAltField;
+            set => stopCommandHotkeyAltField = value;
         }
 
         /// <remarks/>
-        public byte StopCommandHotkeyCtrl
+        public int StopCommandHotkeyCtrl
         {
-            get
-            {
-                return this.stopCommandHotkeyCtrlField;
-            }
-            set
-            {
-                this.stopCommandHotkeyCtrlField = value;
-            }
+            get => stopCommandHotkeyCtrlField;
+            set => stopCommandHotkeyCtrlField = value;
         }
 
         /// <remarks/>
-        public byte StopCommandHotkeyWin
+        public int StopCommandHotkeyWin
         {
-            get
-            {
-                return this.stopCommandHotkeyWinField;
-            }
-            set
-            {
-                this.stopCommandHotkeyWinField = value;
-            }
+            get => stopCommandHotkeyWinField;
+            set => stopCommandHotkeyWinField = value;
         }
 
         /// <remarks/>
         public bool StopCommandHotkeyPassThru
         {
-            get
-            {
-                return this.stopCommandHotkeyPassThruField;
-            }
-            set
-            {
-                this.stopCommandHotkeyPassThruField = value;
-            }
+            get => stopCommandHotkeyPassThruField;
+            set => stopCommandHotkeyPassThruField = value;
         }
 
         /// <remarks/>
         public bool DisableShortcuts
         {
-            get
-            {
-                return this.disableShortcutsField;
-            }
-            set
-            {
-                this.disableShortcutsField = value;
-            }
+            get => disableShortcutsField;
+            set => disableShortcutsField = value;
         }
 
         /// <remarks/>
         public bool UseOverrideListening
         {
-            get
-            {
-                return this.useOverrideListeningField;
-            }
-            set
-            {
-                this.useOverrideListeningField = value;
-            }
+            get => useOverrideListeningField;
+            set => useOverrideListeningField = value;
         }
 
         /// <remarks/>
         public bool OverrideJoystickGlobal
         {
-            get
-            {
-                return this.overrideJoystickGlobalField;
-            }
-            set
-            {
-                this.overrideJoystickGlobalField = value;
-            }
+            get => overrideJoystickGlobalField;
+            set => overrideJoystickGlobalField = value;
         }
 
         /// <remarks/>
-        public byte GlobalJoystickIndex
+        public int GlobalJoystickIndex
         {
-            get
-            {
-                return this.globalJoystickIndexField;
-            }
-            set
-            {
-                this.globalJoystickIndexField = value;
-            }
+            get => globalJoystickIndexField;
+            set => globalJoystickIndexField = value;
         }
 
         /// <remarks/>
-        public byte GlobalJoystickButton
+        public int GlobalJoystickButton
         {
-            get
-            {
-                return this.globalJoystickButtonField;
-            }
-            set
-            {
-                this.globalJoystickButtonField = value;
-            }
+            get => globalJoystickButtonField;
+            set => globalJoystickButtonField = value;
         }
 
         /// <remarks/>
-        public byte GlobalJoystickNumber
+        public int GlobalJoystickNumber
         {
-            get
-            {
-                return this.globalJoystickNumberField;
-            }
-            set
-            {
-                this.globalJoystickNumberField = value;
-            }
+            get => globalJoystickNumberField;
+            set => globalJoystickNumberField = value;
         }
 
         /// <remarks/>
-        public byte GlobalJoystickButton2
+        public int GlobalJoystickButton2
         {
-            get
-            {
-                return this.globalJoystickButton2Field;
-            }
-            set
-            {
-                this.globalJoystickButton2Field = value;
-            }
+            get => globalJoystickButton2Field;
+            set => globalJoystickButton2Field = value;
         }
 
         /// <remarks/>
-        public byte GlobalJoystickNumber2
+        public int GlobalJoystickNumber2
         {
-            get
-            {
-                return this.globalJoystickNumber2Field;
-            }
-            set
-            {
-                this.globalJoystickNumber2Field = value;
-            }
+            get => globalJoystickNumber2Field;
+            set => globalJoystickNumber2Field = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object ReferencedProfile
         {
-            get
-            {
-                return this.referencedProfileField;
-            }
-            set
-            {
-                this.referencedProfileField = value;
-            }
+            get => referencedProfileField;
+            set => referencedProfileField = value;
         }
 
         /// <remarks/>
         public string ExportVAVersion
         {
-            get
-            {
-                return this.exportVAVersionField;
-            }
-            set
-            {
-                this.exportVAVersionField = value;
-            }
+            get => exportVAVersionField;
+            set => exportVAVersionField = value;
         }
 
         /// <remarks/>
-        public byte ExportOSVersionMajor
+        public int ExportOSVersionMajor
         {
-            get
-            {
-                return this.exportOSVersionMajorField;
-            }
-            set
-            {
-                this.exportOSVersionMajorField = value;
-            }
+            get => exportOSVersionMajorField;
+            set => exportOSVersionMajorField = value;
         }
 
         /// <remarks/>
-        public byte ExportOSVersionMinor
+        public int ExportOSVersionMinor
         {
-            get
-            {
-                return this.exportOSVersionMinorField;
-            }
-            set
-            {
-                this.exportOSVersionMinorField = value;
-            }
+            get => exportOSVersionMinorField;
+            set => exportOSVersionMinorField = value;
         }
 
         /// <remarks/>
         public bool OverrideConfidence
         {
-            get
-            {
-                return this.overrideConfidenceField;
-            }
-            set
-            {
-                this.overrideConfidenceField = value;
-            }
+            get => overrideConfidenceField;
+            set => overrideConfidenceField = value;
         }
 
         /// <remarks/>
-        public byte Confidence
+        public int Confidence
         {
-            get
-            {
-                return this.confidenceField;
-            }
-            set
-            {
-                this.confidenceField = value;
-            }
+            get => confidenceField;
+            set => confidenceField = value;
         }
 
         /// <remarks/>
         public bool CatchAllEnabled
         {
-            get
-            {
-                return this.catchAllEnabledField;
-            }
-            set
-            {
-                this.catchAllEnabledField = value;
-            }
+            get => catchAllEnabledField;
+            set => catchAllEnabledField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object CatchAllId
         {
-            get
-            {
-                return this.catchAllIdField;
-            }
-            set
-            {
-                this.catchAllIdField = value;
-            }
+            get => catchAllIdField;
+            set => catchAllIdField = value;
         }
 
         /// <remarks/>
         public bool InitializeCommandEnabled
         {
-            get
-            {
-                return this.initializeCommandEnabledField;
-            }
-            set
-            {
-                this.initializeCommandEnabledField = value;
-            }
+            get => initializeCommandEnabledField;
+            set => initializeCommandEnabledField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object InitializeCommandId
         {
-            get
-            {
-                return this.initializeCommandIdField;
-            }
-            set
-            {
-                this.initializeCommandIdField = value;
-            }
+            get => initializeCommandIdField;
+            set => initializeCommandIdField = value;
         }
 
         /// <remarks/>
         public bool UseProcessOverride
         {
-            get
-            {
-                return this.useProcessOverrideField;
-            }
-            set
-            {
-                this.useProcessOverrideField = value;
-            }
+            get => useProcessOverrideField;
+            set => useProcessOverrideField = value;
         }
 
         /// <remarks/>
         public bool ProcessOverrideAciveWindow
         {
-            get
-            {
-                return this.processOverrideAciveWindowField;
-            }
-            set
-            {
-                this.processOverrideAciveWindowField = value;
-            }
+            get => processOverrideAciveWindowField;
+            set => processOverrideAciveWindowField = value;
         }
 
         /// <remarks/>
         public bool DictationCommandEnabled
         {
-            get
-            {
-                return this.dictationCommandEnabledField;
-            }
-            set
-            {
-                this.dictationCommandEnabledField = value;
-            }
+            get => dictationCommandEnabledField;
+            set => dictationCommandEnabledField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object DictationCommandId
         {
-            get
-            {
-                return this.dictationCommandIdField;
-            }
-            set
-            {
-                this.dictationCommandIdField = value;
-            }
+            get => dictationCommandIdField;
+            set => dictationCommandIdField = value;
         }
 
         /// <remarks/>
         public bool EnableProfileSwitch
         {
-            get
-            {
-                return this.enableProfileSwitchField;
-            }
-            set
-            {
-                this.enableProfileSwitchField = value;
-            }
+            get => enableProfileSwitchField;
+            set => enableProfileSwitchField = value;
         }
 
         /// <remarks/>
         public object CategoryGroups
         {
-            get
-            {
-                return this.categoryGroupsField;
-            }
-            set
-            {
-                this.categoryGroupsField = value;
-            }
+            get => categoryGroupsField;
+            set => categoryGroupsField = value;
         }
 
         /// <remarks/>
         public bool GroupCategory
         {
-            get
-            {
-                return this.groupCategoryField;
-            }
-            set
-            {
-                this.groupCategoryField = value;
-            }
+            get => groupCategoryField;
+            set => groupCategoryField = value;
         }
 
         /// <remarks/>
         public string LastEditedCommand
         {
-            get
-            {
-                return this.lastEditedCommandField;
-            }
-            set
-            {
-                this.lastEditedCommandField = value;
-            }
+            get => lastEditedCommandField;
+            set => lastEditedCommandField = value;
         }
 
         /// <remarks/>
-        public byte IS
+        public int IS
         {
-            get
-            {
-                return this.isField;
-            }
-            set
-            {
-                this.isField = value;
-            }
+            get => isField;
+            set => isField = value;
         }
 
         /// <remarks/>
-        public byte IO
+        public int IO
         {
-            get
-            {
-                return this.ioField;
-            }
-            set
-            {
-                this.ioField = value;
-            }
+            get => ioField;
+            set => ioField = value;
         }
 
         /// <remarks/>
-        public byte IP
+        public int IP
         {
-            get
-            {
-                return this.ipField;
-            }
-            set
-            {
-                this.ipField = value;
-            }
+            get => ipField;
+            set => ipField = value;
         }
 
         /// <remarks/>
-        public byte BE
+        public int BE
         {
-            get
-            {
-                return this.beField;
-            }
-            set
-            {
-                this.beField = value;
-            }
+            get => beField;
+            set => beField = value;
         }
 
         /// <remarks/>
         public bool UnloadCommandEnabled
         {
-            get
-            {
-                return this.unloadCommandEnabledField;
-            }
-            set
-            {
-                this.unloadCommandEnabledField = value;
-            }
+            get => unloadCommandEnabledField;
+            set => unloadCommandEnabledField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object UnloadCommandId
         {
-            get
-            {
-                return this.unloadCommandIdField;
-            }
-            set
-            {
-                this.unloadCommandIdField = value;
-            }
+            get => unloadCommandIdField;
+            set => unloadCommandIdField = value;
         }
 
         /// <remarks/>
         public bool BlockExternal
         {
-            get
-            {
-                return this.blockExternalField;
-            }
-            set
-            {
-                this.blockExternalField = value;
-            }
+            get => blockExternalField;
+            set => blockExternalField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object AuthorID
         {
-            get
-            {
-                return this.authorIDField;
-            }
-            set
-            {
-                this.authorIDField = value;
-            }
+            get => authorIDField;
+            set => authorIDField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object ProductID
         {
-            get
-            {
-                return this.productIDField;
-            }
-            set
-            {
-                this.productIDField = value;
-            }
+            get => productIDField;
+            set => productIDField = value;
         }
 
         /// <remarks/>
-        public byte CR
+        public int CR
         {
-            get
-            {
-                return this.crField;
-            }
-            set
-            {
-                this.crField = value;
-            }
+            get => crField;
+            set => crField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object InternalID
         {
-            get
-            {
-                return this.internalIDField;
-            }
-            set
-            {
-                this.internalIDField = value;
-            }
+            get => internalIDField;
+            set => internalIDField = value;
         }
     }
 
@@ -929,21 +569,21 @@
 
         private object referrerField;
 
-        private byte execTypeField;
+        private int execTypeField;
 
-        private byte confidenceField;
+        private int confidenceField;
 
-        private byte prefixActionCountField;
+        private int prefixActionCountField;
 
         private bool isDynamicallyCreatedField;
 
         private bool targetProcessSetField;
 
-        private byte targetProcessTypeField;
+        private int targetProcessTypeField;
 
-        private byte targetProcessLevelField;
+        private int targetProcessLevelField;
 
-        private byte compareTypeField;
+        private int compareTypeField;
 
         private bool execFromWildcardField;
 
@@ -969,15 +609,15 @@
 
         private bool useShortcutField;
 
-        private byte keyValueField;
+        private int keyValueField;
 
-        private byte keyShiftField;
+        private int keyShiftField;
 
-        private byte keyAltField;
+        private int keyAltField;
 
-        private byte keyCtrlField;
+        private int keyCtrlField;
 
-        private byte keyWinField;
+        private int keyWinField;
 
         private bool keyPassthruField;
 
@@ -985,27 +625,27 @@
 
         private bool onlyKeyUpField;
 
-        private byte repeatNumberField;
+        private int repeatNumberField;
 
-        private byte repeatTypeField;
+        private int repeatTypeField;
 
-        private byte commandTypeField;
+        private int commandTypeField;
 
         private string sourceProfileField;
 
         private bool useConfidenceField;
 
-        private byte minimumConfidenceLevelField;
+        private int minimumConfidenceLevelField;
 
         private bool useJoystickField;
 
-        private byte joystickNumberField;
+        private int joystickNumberField;
 
-        private byte joystickButtonField;
+        private int joystickButtonField;
 
-        private byte joystickNumber2Field;
+        private int joystickNumber2Field;
 
-        private byte joystickButton2Field;
+        private int joystickButton2Field;
 
         private bool joystickUpField;
 
@@ -1059,15 +699,15 @@
 
         private bool repeatIfJoystickDownField;
 
-        private byte ahField;
+        private int ahField;
 
-        private byte clField;
+        private int clField;
 
         private bool hasMBField;
 
         private bool useVariableHotkeyField;
 
-        private byte cLEField;
+        private int cLEField;
 
         private bool eX1Field;
 
@@ -1079,965 +719,521 @@
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object Referrer
         {
-            get
-            {
-                return this.referrerField;
-            }
-            set
-            {
-                this.referrerField = value;
-            }
+            get => referrerField;
+            set => referrerField = value;
         }
 
         /// <remarks/>
-        public byte ExecType
+        public int ExecType
         {
-            get
-            {
-                return this.execTypeField;
-            }
-            set
-            {
-                this.execTypeField = value;
-            }
+            get => execTypeField;
+            set => execTypeField = value;
         }
 
         /// <remarks/>
-        public byte Confidence
+        public int Confidence
         {
-            get
-            {
-                return this.confidenceField;
-            }
-            set
-            {
-                this.confidenceField = value;
-            }
+            get => confidenceField;
+            set => confidenceField = value;
         }
 
         /// <remarks/>
-        public byte PrefixActionCount
+        public int PrefixActionCount
         {
-            get
-            {
-                return this.prefixActionCountField;
-            }
-            set
-            {
-                this.prefixActionCountField = value;
-            }
+            get => prefixActionCountField;
+            set => prefixActionCountField = value;
         }
 
         /// <remarks/>
         public bool IsDynamicallyCreated
         {
-            get
-            {
-                return this.isDynamicallyCreatedField;
-            }
-            set
-            {
-                this.isDynamicallyCreatedField = value;
-            }
+            get => isDynamicallyCreatedField;
+            set => isDynamicallyCreatedField = value;
         }
 
         /// <remarks/>
         public bool TargetProcessSet
         {
-            get
-            {
-                return this.targetProcessSetField;
-            }
-            set
-            {
-                this.targetProcessSetField = value;
-            }
+            get => targetProcessSetField;
+            set => targetProcessSetField = value;
         }
 
         /// <remarks/>
-        public byte TargetProcessType
+        public int TargetProcessType
         {
-            get
-            {
-                return this.targetProcessTypeField;
-            }
-            set
-            {
-                this.targetProcessTypeField = value;
-            }
+            get => targetProcessTypeField;
+            set => targetProcessTypeField = value;
         }
 
         /// <remarks/>
-        public byte TargetProcessLevel
+        public int TargetProcessLevel
         {
-            get
-            {
-                return this.targetProcessLevelField;
-            }
-            set
-            {
-                this.targetProcessLevelField = value;
-            }
+            get => targetProcessLevelField;
+            set => targetProcessLevelField = value;
         }
 
         /// <remarks/>
-        public byte CompareType
+        public int CompareType
         {
-            get
-            {
-                return this.compareTypeField;
-            }
-            set
-            {
-                this.compareTypeField = value;
-            }
+            get => compareTypeField;
+            set => compareTypeField = value;
         }
 
         /// <remarks/>
         public bool ExecFromWildcard
         {
-            get
-            {
-                return this.execFromWildcardField;
-            }
-            set
-            {
-                this.execFromWildcardField = value;
-            }
+            get => execFromWildcardField;
+            set => execFromWildcardField = value;
         }
 
         /// <remarks/>
         public bool IsSubCommand
         {
-            get
-            {
-                return this.isSubCommandField;
-            }
-            set
-            {
-                this.isSubCommandField = value;
-            }
+            get => isSubCommandField;
+            set => isSubCommandField = value;
         }
 
         /// <remarks/>
         public bool IsOverride
         {
-            get
-            {
-                return this.isOverrideField;
-            }
-            set
-            {
-                this.isOverrideField = value;
-            }
+            get => isOverrideField;
+            set => isOverrideField = value;
         }
 
         /// <remarks/>
         public string BaseId
         {
-            get
-            {
-                return this.baseIdField;
-            }
-            set
-            {
-                this.baseIdField = value;
-            }
+            get => baseIdField;
+            set => baseIdField = value;
         }
 
         /// <remarks/>
         public string OriginId
         {
-            get
-            {
-                return this.originIdField;
-            }
-            set
-            {
-                this.originIdField = value;
-            }
+            get => originIdField;
+            set => originIdField = value;
         }
 
         /// <remarks/>
         public bool SessionEnabled
         {
-            get
-            {
-                return this.sessionEnabledField;
-            }
-            set
-            {
-                this.sessionEnabledField = value;
-            }
+            get => sessionEnabledField;
+            set => sessionEnabledField = value;
         }
 
         /// <remarks/>
         public string Id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get => idField;
+            set => idField = value;
         }
 
         /// <remarks/>
         public string CommandString
         {
-            get
-            {
-                return this.commandStringField;
-            }
-            set
-            {
-                this.commandStringField = value;
-            }
+            get => commandStringField;
+            set => commandStringField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("CommandAction", IsNullable = false)]
         public ProfileCommandCommandAction[] ActionSequence
         {
-            get
-            {
-                return this.actionSequenceField;
-            }
-            set
-            {
-                this.actionSequenceField = value;
-            }
+            get => actionSequenceField;
+            set => actionSequenceField = value;
         }
 
         /// <remarks/>
         public bool Async
         {
-            get
-            {
-                return this.asyncField;
-            }
-            set
-            {
-                this.asyncField = value;
-            }
+            get => asyncField;
+            set => asyncField = value;
         }
 
         /// <remarks/>
         public bool Enabled
         {
-            get
-            {
-                return this.enabledField;
-            }
-            set
-            {
-                this.enabledField = value;
-            }
+            get => enabledField;
+            set => enabledField = value;
         }
 
         /// <remarks/>
         public bool UseShortcut
         {
-            get
-            {
-                return this.useShortcutField;
-            }
-            set
-            {
-                this.useShortcutField = value;
-            }
+            get => useShortcutField;
+            set => useShortcutField = value;
         }
 
         /// <remarks/>
-        public byte keyValue
+        public int keyValue
         {
-            get
-            {
-                return this.keyValueField;
-            }
-            set
-            {
-                this.keyValueField = value;
-            }
+            get => keyValueField;
+            set => keyValueField = value;
         }
 
         /// <remarks/>
-        public byte keyShift
+        public int keyShift
         {
-            get
-            {
-                return this.keyShiftField;
-            }
-            set
-            {
-                this.keyShiftField = value;
-            }
+            get => keyShiftField;
+            set => keyShiftField = value;
         }
 
         /// <remarks/>
-        public byte keyAlt
+        public int keyAlt
         {
-            get
-            {
-                return this.keyAltField;
-            }
-            set
-            {
-                this.keyAltField = value;
-            }
+            get => keyAltField;
+            set => keyAltField = value;
         }
 
         /// <remarks/>
-        public byte keyCtrl
+        public int keyCtrl
         {
-            get
-            {
-                return this.keyCtrlField;
-            }
-            set
-            {
-                this.keyCtrlField = value;
-            }
+            get => keyCtrlField;
+            set => keyCtrlField = value;
         }
 
         /// <remarks/>
-        public byte keyWin
+        public int keyWin
         {
-            get
-            {
-                return this.keyWinField;
-            }
-            set
-            {
-                this.keyWinField = value;
-            }
+            get => keyWinField;
+            set => keyWinField = value;
         }
 
         /// <remarks/>
         public bool keyPassthru
         {
-            get
-            {
-                return this.keyPassthruField;
-            }
-            set
-            {
-                this.keyPassthruField = value;
-            }
+            get => keyPassthruField;
+            set => keyPassthruField = value;
         }
 
         /// <remarks/>
         public bool UseSpokenPhrase
         {
-            get
-            {
-                return this.useSpokenPhraseField;
-            }
-            set
-            {
-                this.useSpokenPhraseField = value;
-            }
+            get => useSpokenPhraseField;
+            set => useSpokenPhraseField = value;
         }
 
         /// <remarks/>
         public bool onlyKeyUp
         {
-            get
-            {
-                return this.onlyKeyUpField;
-            }
-            set
-            {
-                this.onlyKeyUpField = value;
-            }
+            get => onlyKeyUpField;
+            set => onlyKeyUpField = value;
         }
 
         /// <remarks/>
-        public byte RepeatNumber
+        public int RepeatNumber
         {
-            get
-            {
-                return this.repeatNumberField;
-            }
-            set
-            {
-                this.repeatNumberField = value;
-            }
+            get => repeatNumberField;
+            set => repeatNumberField = value;
         }
 
         /// <remarks/>
-        public byte RepeatType
+        public int RepeatType
         {
-            get
-            {
-                return this.repeatTypeField;
-            }
-            set
-            {
-                this.repeatTypeField = value;
-            }
+            get => repeatTypeField;
+            set => repeatTypeField = value;
         }
 
         /// <remarks/>
-        public byte CommandType
+        public int CommandType
         {
-            get
-            {
-                return this.commandTypeField;
-            }
-            set
-            {
-                this.commandTypeField = value;
-            }
+            get => commandTypeField;
+            set => commandTypeField = value;
         }
 
         /// <remarks/>
         public string SourceProfile
         {
-            get
-            {
-                return this.sourceProfileField;
-            }
-            set
-            {
-                this.sourceProfileField = value;
-            }
+            get => sourceProfileField;
+            set => sourceProfileField = value;
         }
 
         /// <remarks/>
         public bool UseConfidence
         {
-            get
-            {
-                return this.useConfidenceField;
-            }
-            set
-            {
-                this.useConfidenceField = value;
-            }
+            get => useConfidenceField;
+            set => useConfidenceField = value;
         }
 
         /// <remarks/>
-        public byte minimumConfidenceLevel
+        public int minimumConfidenceLevel
         {
-            get
-            {
-                return this.minimumConfidenceLevelField;
-            }
-            set
-            {
-                this.minimumConfidenceLevelField = value;
-            }
+            get => minimumConfidenceLevelField;
+            set => minimumConfidenceLevelField = value;
         }
 
         /// <remarks/>
         public bool UseJoystick
         {
-            get
-            {
-                return this.useJoystickField;
-            }
-            set
-            {
-                this.useJoystickField = value;
-            }
+            get => useJoystickField;
+            set => useJoystickField = value;
         }
 
         /// <remarks/>
-        public byte joystickNumber
+        public int joystickNumber
         {
-            get
-            {
-                return this.joystickNumberField;
-            }
-            set
-            {
-                this.joystickNumberField = value;
-            }
+            get => joystickNumberField;
+            set => joystickNumberField = value;
         }
 
         /// <remarks/>
-        public byte joystickButton
+        public int joystickButton
         {
-            get
-            {
-                return this.joystickButtonField;
-            }
-            set
-            {
-                this.joystickButtonField = value;
-            }
+            get => joystickButtonField;
+            set => joystickButtonField = value;
         }
 
         /// <remarks/>
-        public byte joystickNumber2
+        public int joystickNumber2
         {
-            get
-            {
-                return this.joystickNumber2Field;
-            }
-            set
-            {
-                this.joystickNumber2Field = value;
-            }
+            get => joystickNumber2Field;
+            set => joystickNumber2Field = value;
         }
 
         /// <remarks/>
-        public byte joystickButton2
+        public int joystickButton2
         {
-            get
-            {
-                return this.joystickButton2Field;
-            }
-            set
-            {
-                this.joystickButton2Field = value;
-            }
+            get => joystickButton2Field;
+            set => joystickButton2Field = value;
         }
 
         /// <remarks/>
         public bool joystickUp
         {
-            get
-            {
-                return this.joystickUpField;
-            }
-            set
-            {
-                this.joystickUpField = value;
-            }
+            get => joystickUpField;
+            set => joystickUpField = value;
         }
 
         /// <remarks/>
         public bool KeepRepeating
         {
-            get
-            {
-                return this.keepRepeatingField;
-            }
-            set
-            {
-                this.keepRepeatingField = value;
-            }
+            get => keepRepeatingField;
+            set => keepRepeatingField = value;
         }
 
         /// <remarks/>
         public bool UseProcessOverride
         {
-            get
-            {
-                return this.useProcessOverrideField;
-            }
-            set
-            {
-                this.useProcessOverrideField = value;
-            }
+            get => useProcessOverrideField;
+            set => useProcessOverrideField = value;
         }
 
         /// <remarks/>
         public bool ProcessOverrideActiveWindow
         {
-            get
-            {
-                return this.processOverrideActiveWindowField;
-            }
-            set
-            {
-                this.processOverrideActiveWindowField = value;
-            }
+            get => processOverrideActiveWindowField;
+            set => processOverrideActiveWindowField = value;
         }
 
         /// <remarks/>
         public bool LostFocusStop
         {
-            get
-            {
-                return this.lostFocusStopField;
-            }
-            set
-            {
-                this.lostFocusStopField = value;
-            }
+            get => lostFocusStopField;
+            set => lostFocusStopField = value;
         }
 
         /// <remarks/>
         public bool PauseLostFocus
         {
-            get
-            {
-                return this.pauseLostFocusField;
-            }
-            set
-            {
-                this.pauseLostFocusField = value;
-            }
+            get => pauseLostFocusField;
+            set => pauseLostFocusField = value;
         }
 
         /// <remarks/>
         public bool LostFocusBackCompat
         {
-            get
-            {
-                return this.lostFocusBackCompatField;
-            }
-            set
-            {
-                this.lostFocusBackCompatField = value;
-            }
+            get => lostFocusBackCompatField;
+            set => lostFocusBackCompatField = value;
         }
 
         /// <remarks/>
         public bool UseMouse
         {
-            get
-            {
-                return this.useMouseField;
-            }
-            set
-            {
-                this.useMouseField = value;
-            }
+            get => useMouseField;
+            set => useMouseField = value;
         }
 
         /// <remarks/>
         public bool Mouse1
         {
-            get
-            {
-                return this.mouse1Field;
-            }
-            set
-            {
-                this.mouse1Field = value;
-            }
+            get => mouse1Field;
+            set => mouse1Field = value;
         }
 
         /// <remarks/>
         public bool Mouse2
         {
-            get
-            {
-                return this.mouse2Field;
-            }
-            set
-            {
-                this.mouse2Field = value;
-            }
+            get => mouse2Field;
+            set => mouse2Field = value;
         }
 
         /// <remarks/>
         public bool Mouse3
         {
-            get
-            {
-                return this.mouse3Field;
-            }
-            set
-            {
-                this.mouse3Field = value;
-            }
+            get => mouse3Field;
+            set => mouse3Field = value;
         }
 
         /// <remarks/>
         public bool Mouse4
         {
-            get
-            {
-                return this.mouse4Field;
-            }
-            set
-            {
-                this.mouse4Field = value;
-            }
+            get => mouse4Field;
+            set => mouse4Field = value;
         }
 
         /// <remarks/>
         public bool Mouse5
         {
-            get
-            {
-                return this.mouse5Field;
-            }
-            set
-            {
-                this.mouse5Field = value;
-            }
+            get => mouse5Field;
+            set => mouse5Field = value;
         }
 
         /// <remarks/>
         public bool Mouse6
         {
-            get
-            {
-                return this.mouse6Field;
-            }
-            set
-            {
-                this.mouse6Field = value;
-            }
+            get => mouse6Field;
+            set => mouse6Field = value;
         }
 
         /// <remarks/>
         public bool Mouse7
         {
-            get
-            {
-                return this.mouse7Field;
-            }
-            set
-            {
-                this.mouse7Field = value;
-            }
+            get => mouse7Field;
+            set => mouse7Field = value;
         }
 
         /// <remarks/>
         public bool Mouse8
         {
-            get
-            {
-                return this.mouse8Field;
-            }
-            set
-            {
-                this.mouse8Field = value;
-            }
+            get => mouse8Field;
+            set => mouse8Field = value;
         }
 
         /// <remarks/>
         public bool Mouse9
         {
-            get
-            {
-                return this.mouse9Field;
-            }
-            set
-            {
-                this.mouse9Field = value;
-            }
+            get => mouse9Field;
+            set => mouse9Field = value;
         }
 
         /// <remarks/>
         public bool MouseUpOnly
         {
-            get
-            {
-                return this.mouseUpOnlyField;
-            }
-            set
-            {
-                this.mouseUpOnlyField = value;
-            }
+            get => mouseUpOnlyField;
+            set => mouseUpOnlyField = value;
         }
 
         /// <remarks/>
         public bool MousePassThru
         {
-            get
-            {
-                return this.mousePassThruField;
-            }
-            set
-            {
-                this.mousePassThruField = value;
-            }
+            get => mousePassThruField;
+            set => mousePassThruField = value;
         }
 
         /// <remarks/>
         public bool joystickExclusive
         {
-            get
-            {
-                return this.joystickExclusiveField;
-            }
-            set
-            {
-                this.joystickExclusiveField = value;
-            }
+            get => joystickExclusiveField;
+            set => joystickExclusiveField = value;
         }
 
         /// <remarks/>
         public string lastEditedAction
         {
-            get
-            {
-                return this.lastEditedActionField;
-            }
-            set
-            {
-                this.lastEditedActionField = value;
-            }
+            get => lastEditedActionField;
+            set => lastEditedActionField = value;
         }
 
         /// <remarks/>
         public bool UseProfileProcessOverride
         {
-            get
-            {
-                return this.useProfileProcessOverrideField;
-            }
-            set
-            {
-                this.useProfileProcessOverrideField = value;
-            }
+            get => useProfileProcessOverrideField;
+            set => useProfileProcessOverrideField = value;
         }
 
         /// <remarks/>
         public bool ProfileProcessOverrideActiveWindow
         {
-            get
-            {
-                return this.profileProcessOverrideActiveWindowField;
-            }
-            set
-            {
-                this.profileProcessOverrideActiveWindowField = value;
-            }
+            get => profileProcessOverrideActiveWindowField;
+            set => profileProcessOverrideActiveWindowField = value;
         }
 
         /// <remarks/>
         public bool RepeatIfKeysDown
         {
-            get
-            {
-                return this.repeatIfKeysDownField;
-            }
-            set
-            {
-                this.repeatIfKeysDownField = value;
-            }
+            get => repeatIfKeysDownField;
+            set => repeatIfKeysDownField = value;
         }
 
         /// <remarks/>
         public bool RepeatIfMouseDown
         {
-            get
-            {
-                return this.repeatIfMouseDownField;
-            }
-            set
-            {
-                this.repeatIfMouseDownField = value;
-            }
+            get => repeatIfMouseDownField;
+            set => repeatIfMouseDownField = value;
         }
 
         /// <remarks/>
         public bool RepeatIfJoystickDown
         {
-            get
-            {
-                return this.repeatIfJoystickDownField;
-            }
-            set
-            {
-                this.repeatIfJoystickDownField = value;
-            }
+            get => repeatIfJoystickDownField;
+            set => repeatIfJoystickDownField = value;
         }
 
         /// <remarks/>
-        public byte AH
+        public int AH
         {
-            get
-            {
-                return this.ahField;
-            }
-            set
-            {
-                this.ahField = value;
-            }
+            get => ahField;
+            set => ahField = value;
         }
 
         /// <remarks/>
-        public byte CL
+        public int CL
         {
-            get
-            {
-                return this.clField;
-            }
-            set
-            {
-                this.clField = value;
-            }
+            get => clField;
+            set => clField = value;
         }
 
         /// <remarks/>
         public bool HasMB
         {
-            get
-            {
-                return this.hasMBField;
-            }
-            set
-            {
-                this.hasMBField = value;
-            }
+            get => hasMBField;
+            set => hasMBField = value;
         }
 
         /// <remarks/>
         public bool UseVariableHotkey
         {
-            get
-            {
-                return this.useVariableHotkeyField;
-            }
-            set
-            {
-                this.useVariableHotkeyField = value;
-            }
+            get => useVariableHotkeyField;
+            set => useVariableHotkeyField = value;
         }
 
         /// <remarks/>
-        public byte CLE
+        public int CLE
         {
-            get
-            {
-                return this.cLEField;
-            }
-            set
-            {
-                this.cLEField = value;
-            }
+            get => cLEField;
+            set => cLEField = value;
         }
 
         /// <remarks/>
         public bool EX1
         {
-            get
-            {
-                return this.eX1Field;
-            }
-            set
-            {
-                this.eX1Field = value;
-            }
+            get => eX1Field;
+            set => eX1Field = value;
         }
 
         /// <remarks/>
         public bool EX2
         {
-            get
-            {
-                return this.eX2Field;
-            }
-            set
-            {
-                this.eX2Field = value;
-            }
+            get => eX2Field;
+            set => eX2Field = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object InternalId
         {
-            get
-            {
-                return this.internalIdField;
-            }
-            set
-            {
-                this.internalIdField = value;
-            }
+            get => internalIdField;
+            set => internalIdField = value;
         }
     }
 
@@ -2054,17 +1250,17 @@
 
         private bool pairingSetElseField;
 
-        private byte ordinalField;
+        private int ordinalField;
 
         private object conditionMetField;
 
-        private byte indentLevelField;
+        private int indentLevelField;
 
         private bool conditionSkipField;
 
         private bool isSuffixActionField;
 
-        private byte decimalTransient1Field;
+        private int decimalTransient1Field;
 
         private string captionField;
 
@@ -2074,35 +1270,41 @@
 
         private decimal durationField;
 
-        private byte delayField;
+        private int delayField;
 
         private ProfileCommandCommandActionKeyCodes keyCodesField;
 
         private object contextField;
 
-        private byte xField;
+        private object context2Field;
 
-        private byte yField;
+        private object context3Field;
 
-        private byte zField;
+        private object context4Field;
 
-        private byte inputModeField;
+        private int xField;
 
-        private byte conditionPairingField;
+        private int yField;
 
-        private byte conditionGroupField;
+        private int zField;
 
-        private byte conditionStartOperatorField;
+        private int inputModeField;
 
-        private byte conditionStartValueField;
+        private int conditionPairingField;
 
-        private byte conditionStartValueTypeField;
+        private int conditionGroupField;
 
-        private byte conditionStartTypeField;
+        private int conditionStartOperatorField;
 
-        private byte decimalContext1Field;
+        private int conditionStartValueField;
 
-        private byte decimalContext2Field;
+        private int conditionStartValueTypeField;
+
+        private int conditionStartTypeField;
+
+        private int decimalContext1Field;
+
+        private int decimalContext2Field;
 
         private System.DateTime dateContext1Field;
 
@@ -2115,418 +1317,247 @@
         /// <remarks/>
         public string _caption
         {
-            get
-            {
-                return this._captionField;
-            }
-            set
-            {
-                this._captionField = value;
-            }
+            get => _captionField;
+            set => _captionField = value;
         }
 
         /// <remarks/>
         public bool PairingSet
         {
-            get
-            {
-                return this.pairingSetField;
-            }
-            set
-            {
-                this.pairingSetField = value;
-            }
+            get => pairingSetField;
+            set => pairingSetField = value;
         }
 
         /// <remarks/>
         public bool PairingSetElse
         {
-            get
-            {
-                return this.pairingSetElseField;
-            }
-            set
-            {
-                this.pairingSetElseField = value;
-            }
+            get => pairingSetElseField;
+            set => pairingSetElseField = value;
         }
 
         /// <remarks/>
-        public byte Ordinal
+        public int Ordinal
         {
-            get
-            {
-                return this.ordinalField;
-            }
-            set
-            {
-                this.ordinalField = value;
-            }
+            get => ordinalField;
+            set => ordinalField = value;
         }
 
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(IsNullable = true)]
         public object ConditionMet
         {
-            get
-            {
-                return this.conditionMetField;
-            }
-            set
-            {
-                this.conditionMetField = value;
-            }
+            get => conditionMetField;
+            set => conditionMetField = value;
         }
 
         /// <remarks/>
-        public byte IndentLevel
+        public int IndentLevel
         {
-            get
-            {
-                return this.indentLevelField;
-            }
-            set
-            {
-                this.indentLevelField = value;
-            }
+            get => indentLevelField;
+            set => indentLevelField = value;
         }
 
         /// <remarks/>
         public bool ConditionSkip
         {
-            get
-            {
-                return this.conditionSkipField;
-            }
-            set
-            {
-                this.conditionSkipField = value;
-            }
+            get => conditionSkipField;
+            set => conditionSkipField = value;
         }
 
         /// <remarks/>
         public bool IsSuffixAction
         {
-            get
-            {
-                return this.isSuffixActionField;
-            }
-            set
-            {
-                this.isSuffixActionField = value;
-            }
+            get => isSuffixActionField;
+            set => isSuffixActionField = value;
         }
 
         /// <remarks/>
-        public byte DecimalTransient1
+        public int DecimalTransient1
         {
-            get
-            {
-                return this.decimalTransient1Field;
-            }
-            set
-            {
-                this.decimalTransient1Field = value;
-            }
+            get => decimalTransient1Field;
+            set => decimalTransient1Field = value;
         }
 
         /// <remarks/>
         public string Caption
         {
-            get
-            {
-                return this.captionField;
-            }
-            set
-            {
-                this.captionField = value;
-            }
+            get => captionField;
+            set => captionField = value;
         }
 
         /// <remarks/>
         public string Id
         {
-            get
-            {
-                return this.idField;
-            }
-            set
-            {
-                this.idField = value;
-            }
+            get => idField;
+            set => idField = value;
         }
 
         /// <remarks/>
         public string ActionType
         {
-            get
-            {
-                return this.actionTypeField;
-            }
-            set
-            {
-                this.actionTypeField = value;
-            }
+            get => actionTypeField;
+            set => actionTypeField = value;
         }
 
         /// <remarks/>
         public decimal Duration
         {
-            get
-            {
-                return this.durationField;
-            }
-            set
-            {
-                this.durationField = value;
-            }
+            get => durationField;
+            set => durationField = value;
         }
 
         /// <remarks/>
-        public byte Delay
+        public int Delay
         {
-            get
-            {
-                return this.delayField;
-            }
-            set
-            {
-                this.delayField = value;
-            }
+            get => delayField;
+            set => delayField = value;
         }
 
         /// <remarks/>
         public ProfileCommandCommandActionKeyCodes KeyCodes
         {
-            get
-            {
-                return this.keyCodesField;
-            }
-            set
-            {
-                this.keyCodesField = value;
-            }
+            get => keyCodesField;
+            set => keyCodesField = value;
         }
 
         /// <remarks/>
         public object Context
         {
-            get
-            {
-                return this.contextField;
-            }
-            set
-            {
-                this.contextField = value;
-            }
+            get => contextField;
+            set => contextField = value;
         }
 
         /// <remarks/>
-        public byte X
+        public object Context2
         {
-            get
-            {
-                return this.xField;
-            }
-            set
-            {
-                this.xField = value;
-            }
+            get => contextField;
+            set => context2Field = value;
         }
 
         /// <remarks/>
-        public byte Y
+        public object Context3
         {
-            get
-            {
-                return this.yField;
-            }
-            set
-            {
-                this.yField = value;
-            }
+            get => contextField;
+            set => context3Field = value;
         }
 
         /// <remarks/>
-        public byte Z
+        public object Context4
         {
-            get
-            {
-                return this.zField;
-            }
-            set
-            {
-                this.zField = value;
-            }
+            get => contextField;
+            set => context4Field = value;
         }
 
         /// <remarks/>
-        public byte InputMode
+        public int X
         {
-            get
-            {
-                return this.inputModeField;
-            }
-            set
-            {
-                this.inputModeField = value;
-            }
+            get => xField;
+            set => xField = value;
         }
 
         /// <remarks/>
-        public byte ConditionPairing
+        public int Y
         {
-            get
-            {
-                return this.conditionPairingField;
-            }
-            set
-            {
-                this.conditionPairingField = value;
-            }
+            get => yField;
+            set => yField = value;
         }
 
         /// <remarks/>
-        public byte ConditionGroup
+        public int Z
         {
-            get
-            {
-                return this.conditionGroupField;
-            }
-            set
-            {
-                this.conditionGroupField = value;
-            }
+            get => zField;
+            set => zField = value;
         }
 
         /// <remarks/>
-        public byte ConditionStartOperator
+        public int InputMode
         {
-            get
-            {
-                return this.conditionStartOperatorField;
-            }
-            set
-            {
-                this.conditionStartOperatorField = value;
-            }
+            get => inputModeField;
+            set => inputModeField = value;
         }
 
         /// <remarks/>
-        public byte ConditionStartValue
+        public int ConditionPairing
         {
-            get
-            {
-                return this.conditionStartValueField;
-            }
-            set
-            {
-                this.conditionStartValueField = value;
-            }
+            get => conditionPairingField;
+            set => conditionPairingField = value;
         }
 
         /// <remarks/>
-        public byte ConditionStartValueType
+        public int ConditionGroup
         {
-            get
-            {
-                return this.conditionStartValueTypeField;
-            }
-            set
-            {
-                this.conditionStartValueTypeField = value;
-            }
+            get => conditionGroupField;
+            set => conditionGroupField = value;
         }
 
         /// <remarks/>
-        public byte ConditionStartType
+        public int ConditionStartOperator
         {
-            get
-            {
-                return this.conditionStartTypeField;
-            }
-            set
-            {
-                this.conditionStartTypeField = value;
-            }
+            get => conditionStartOperatorField;
+            set => conditionStartOperatorField = value;
         }
 
         /// <remarks/>
-        public byte DecimalContext1
+        public int ConditionStartValue
         {
-            get
-            {
-                return this.decimalContext1Field;
-            }
-            set
-            {
-                this.decimalContext1Field = value;
-            }
+            get => conditionStartValueField;
+            set => conditionStartValueField = value;
         }
 
         /// <remarks/>
-        public byte DecimalContext2
+        public int ConditionStartValueType
         {
-            get
-            {
-                return this.decimalContext2Field;
-            }
-            set
-            {
-                this.decimalContext2Field = value;
-            }
+            get => conditionStartValueTypeField;
+            set => conditionStartValueTypeField = value;
+        }
+
+        /// <remarks/>
+        public int ConditionStartType
+        {
+            get => conditionStartTypeField;
+            set => conditionStartTypeField = value;
+        }
+
+        /// <remarks/>
+        public int DecimalContext1
+        {
+            get => decimalContext1Field;
+            set => decimalContext1Field = value;
+        }
+
+        /// <remarks/>
+        public int DecimalContext2
+        {
+            get => decimalContext2Field;
+            set => decimalContext2Field = value;
         }
 
         /// <remarks/>
         public System.DateTime DateContext1
         {
-            get
-            {
-                return this.dateContext1Field;
-            }
-            set
-            {
-                this.dateContext1Field = value;
-            }
+            get => dateContext1Field;
+            set => dateContext1Field = value;
         }
 
         /// <remarks/>
         public System.DateTime DateContext2
         {
-            get
-            {
-                return this.dateContext2Field;
-            }
-            set
-            {
-                this.dateContext2Field = value;
-            }
+            get => dateContext2Field;
+            set => dateContext2Field = value;
         }
 
         /// <remarks/>
         public bool Disabled
         {
-            get
-            {
-                return this.disabledField;
-            }
-            set
-            {
-                this.disabledField = value;
-            }
+            get => disabledField;
+            set => disabledField = value;
         }
 
         /// <remarks/>
         public object RandomSounds
         {
-            get
-            {
-                return this.randomSoundsField;
-            }
-            set
-            {
-                this.randomSoundsField = value;
-            }
+            get => randomSoundsField;
+            set => randomSoundsField = value;
         }
     }
 
@@ -2542,14 +1573,8 @@
         /// <remarks/>
         public byte unsignedShort
         {
-            get
-            {
-                return this.unsignedShortField;
-            }
-            set
-            {
-                this.unsignedShortField = value;
-            }
+            get => unsignedShortField;
+            set => unsignedShortField = value;
         }
     }
 
