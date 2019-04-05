@@ -27,6 +27,8 @@ namespace Code2Profile.VoiceAttack
             vap.ExportOSVersionMajor = (byte)Environment.OSVersion.Version.Major;
             vap.ExportOSVersionMinor = (byte)Environment.OSVersion.Version.Minor;
             vap.Commands = new List<ProfileCommand>().ToArray();
+            vap.LastEditedCommand = Guid.Empty.ToString();
+            vap.CategoryGroups = "";
 
             return this;
         }
@@ -47,15 +49,29 @@ namespace Code2Profile.VoiceAttack
             c.BaseId = command.ID.ToString();
             c.Enabled = command.IsEnabled;
             c.SessionEnabled = command.IsEnabled;
+            c.Id = command.ID.ToString();
 
             //Standard stuff.
             c.ExecType = 3;
             c.ProcessOverrideActiveWindow = true;
             c.LostFocusBackCompat = true;
+            c.OriginId = Guid.Empty.ToString();
+            c.SourceProfile = Guid.Empty.ToString();
+            c.lastEditedAction = Guid.Empty.ToString();
 
             //Add the actions.
             List<ProfileCommandCommandAction> actions = new List<ProfileCommandCommandAction>();
-            command.Actions.ForEach(x => actions.Add(x.GetAction()));
+            foreach (var action in command.Actions)
+            {
+                ProfileCommandCommandAction a = action.GetAction();
+                //a.KeyCodes = new ProfileCommandCommandActionKeyCodes();
+                a.Caption = "";
+                a._caption = "";
+                a.Context = "";
+                a.RandomSounds = "";
+                actions.Add(a);
+            }
+
             c.ActionSequence = actions.ToArray();
 
             //Add the command.

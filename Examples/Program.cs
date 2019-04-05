@@ -15,14 +15,14 @@ namespace Examples
         static void Main(string[] args)
         {
             VoiceAttackBuilder vapb = new VoiceAttackBuilder();
-            vapb.CreateProfile("testing!")
-                .AddCommand(new CommandBuilder()
+            vapb.CreateProfile("testing123!")
+                 .AddCommand(new CommandBuilder()
                     .UsePhrase("Hello there")
                     .AddAction(new ActionKeyPress(Keys.A)
                         .SetDuration(1))
                     .AddAction(new ActionPause(2))
                     .Build())
-                .AddCommand(new CommandBuilder()
+                 .AddCommand(new CommandBuilder()
                     .UsePhrase("Hello again!")
                     .AddAction(new ActionKeyDown(Keys.Add))
                     .Build())
