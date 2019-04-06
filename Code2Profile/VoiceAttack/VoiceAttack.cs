@@ -20,15 +20,17 @@ namespace Code2Profile.VoiceAttack
         /// <returns></returns>
         public VoiceAttackBuilder CreateProfile(string name)
         {
-            vap = new Profile();
-            vap.Name = name;
-            vap.Id = Guid.NewGuid().ToString();
-            vap.ExportVAVersion = "1.7.5";
-            vap.ExportOSVersionMajor = Environment.OSVersion.Version.Major;
-            vap.ExportOSVersionMinor = Environment.OSVersion.Version.Minor;
-            vap.Commands = new List<ProfileCommand>().ToArray();
-            vap.LastEditedCommand = Guid.Empty.ToString();
-            vap.CategoryGroups = "";
+            vap = new Profile
+            {
+                Name = name,
+                Id = Guid.NewGuid().ToString(),
+                ExportVAVersion = "1.7.5",
+                ExportOSVersionMajor = Environment.OSVersion.Version.Major,
+                ExportOSVersionMinor = Environment.OSVersion.Version.Minor,
+                Commands = new List<ProfileCommand>().ToArray(),
+                LastEditedCommand = Guid.Empty.ToString(),
+                CategoryGroups = ""
+            };
 
             return this;
         }
