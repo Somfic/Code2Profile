@@ -34,9 +34,11 @@ namespace Code2Profile.VoiceMacro
             c.GUID = command.ID.ToString();
             c.RecocnitionText = command.Phrase;
             c.ShortCut = command.Shortcut;
+            c.UseRecognitionSpecified = true;
             c.UseRecognition = command.UseRecognition;
 
             Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(c, Newtonsoft.Json.Formatting.Indented));
+
             Console.ReadKey();
 
             //Add the command.

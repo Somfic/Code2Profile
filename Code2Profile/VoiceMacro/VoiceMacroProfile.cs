@@ -96,7 +96,6 @@
         }
 
         /// <remarks/>
-        [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool UseRecognitionSpecified
         {
             get => useRecognitionFieldSpecified;

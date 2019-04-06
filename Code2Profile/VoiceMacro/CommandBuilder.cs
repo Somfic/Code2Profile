@@ -43,18 +43,6 @@ namespace Code2Profile.VoiceMacro
         public CommandBuilder UsePhrase(string phrase)
         {
             command.Phrase = phrase;
-            command.UseRecognition = true;
-            return this;
-        }
-
-        /// <summary>
-        /// Whether the phrase is enabled.
-        /// </summary>
-        /// <param name="usePhrase"></param>
-        /// <returns></returns>
-        public CommandBuilder UsePhrase(bool usePhrase)
-        {
-            command.UseRecognition = usePhrase;
             return this;
         }
     }
