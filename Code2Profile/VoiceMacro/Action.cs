@@ -3,9 +3,91 @@ using System.Windows.Forms;
 
 namespace Code2Profile.VoiceMacro
 {
-    public interface IAction
-    {
+    public interface IAction { }
 
+    //Custom actions for non-class actions.
+    public enum StartStop { Stop, Start, Toggle }
+    public enum MinResToggle { Minimize, Restore, Toggle }
+    public enum CopyPaste { Copy, Paste }
+
+    public class PauseAction : IAction
+    {
+        public int Miliseconds;
+    }
+
+    public class FindWindowAndActivateAction
+    {
+        public string Windowname;
+    }
+
+    public class StartStopListenAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class StartStopExecuteAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class StartStopAutoProfileAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class StartStopShortCutsAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class MinRestToggleVMAction : IAction
+    {
+        public MinResToggle WantedAction;
+    }
+
+    public class StartStopSchedulerAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class StartStopIgnoreCommandsAction : IAction
+    {
+        public StartStop WantedAction;
+    }
+
+    public class ChangeEngineAction : IAction
+    {
+        public string WantedEngine;
+    }
+
+    public class BlockInputAction :  IAction
+    {
+        public bool DoBlocking;
+    }
+
+    public class ClipboardAction : IAction
+    {
+        public CopyPaste WantedAction;
+    }
+
+    public class HideOSDAction : IAction
+    {
+        public string WantedOSD;
+    }
+
+    public class CommentAction : IAction
+    {
+        public string WantedComment;
+    }
+
+    public class LabelAction : IAction
+    {
+        public string WantedLabel;
+    }
+
+    public class GotoLabelAction : IAction
+    {
+        public string WantedLabel;
     }
 
     public class MacroAction

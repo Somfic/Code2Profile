@@ -68,10 +68,26 @@ namespace Code2Profile.VoiceMacro
         public CommandBuilder AddAction(IAction action)
         {
             string actionType = action.GetType().Name.Replace("Action", string.Empty);
-            
+
             MacroAction a = new MacroAction();
 
-            a.GetType().GetFields().First(x => x.Name == actionType).SetValue(a, action);
+            if (actionType == "Pause") { a.Pause = ((PauseAction)action).Miliseconds; }
+            else if (actionType == "FindWindowAndActivate") { a.FindWindowAndActivate = ((FindWindowAndActivateAction)action).Windowname; }
+            else if (actionType == "StartStopListen") { a.StartStopListen = (short?)((StartStopListenAction)action).WantedAction; }
+            else if (actionType == "StartStopExecute") { a.StartStopExecute = (short?)((StartStopExecuteAction)action).WantedAction; }
+            else if (actionType == "StartStopAutoProfile") { a.StartStopAutoProfile = (short?)((StartStopAutoProfileAction)action).WantedAction; }
+            else if (actionType == "StartStopShortCuts") { a.StartStopShortCuts = (short?)((StartStopShortCutsAction)action).WantedAction; }
+            else if (actionType == "MinRestToggleVM") { a.MinRestToggleVM = (short?)((MinRestToggleVMAction)action).WantedAction; }
+            else if (actionType == "StartStopScheduler") { a.StartStopScheduler = (short?)((StartStopSchedulerAction)action).WantedAction; }
+            else if (actionType == "StartStopIgnoreCommands") { a.StartStopIgnoreCommands = (short?)((StartStopIgnoreCommandsAction)action).WantedAction; }
+            else if (actionType == "ChangeEngine") { a.ChangeEngine = ((ChangeEngineAction)action).WantedEngine; }
+            else if (actionType == "BlockInput") { a.BlockInput = ((BlockInputAction)action).DoBlocking; }
+            else if (actionType == "Clipboard") { a.Clipboard = (short?)((ClipboardAction)action).WantedAction; }
+            else if (actionType == "HideOSD") { a.HideOSD = ((HideOSDAction)action).WantedOSD; }
+            else if (actionType == "Comment") { a.Comment = ((CommentAction)action).WantedComment; }
+            else if (actionType == "Label") { a.Label = ((LabelAction)action).WantedLabel; }
+            else if (actionType == "GotoLabel") { a.GotoLabel = ((GotoLabelAction)action).WantedLabel; }
+            else { a.GetType().GetFields().FirstOrDefault(x => x.Name == actionType).SetValue(a, action); }
 
             a.MacroType = a.GetMacroType();
             command.MacroActions.Add(a);

@@ -13,8 +13,7 @@ namespace Examples
                 .CreateProfile("test")
                     .AddCommand(new CommandBuilder()
                         .UsePhrase("Test command")
-                        .AddAction(new KeyboardAction() { Key = Keys.A })
-                        .AddAction(new SpeakTextAction() { Text = "Hello from C#!", Volume = 100, Speed = 0 })
+                        .AddAction(new PauseAction() { Miliseconds = 10 })
                     .BuildCommand())
                 .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
         }
