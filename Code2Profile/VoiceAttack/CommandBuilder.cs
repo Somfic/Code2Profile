@@ -97,7 +97,6 @@ namespace Code2Profile.VoiceAttack
         public CommandBuilder AddAction(IAction action)
         {
             command.Actions.Add(action);
-
             return this;
         }
     }

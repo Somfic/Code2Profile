@@ -65,7 +65,7 @@
 
         private bool useRecognitionFieldSpecified;
 
-        private VoiceMacroProfileCommandsMacroAction[] macroActionsField;
+        private MacroAction[] macroActionsField;
 
         /// <remarks/>
         public string GUID
@@ -104,7 +104,7 @@
 
         /// <remarks/>
         [System.Xml.Serialization.XmlArrayItemAttribute("MacroAction", IsNullable = false)]
-        public VoiceMacroProfileCommandsMacroAction[] MacroActions
+        public MacroAction[] MacroActions
         {
             get => macroActionsField;
             set => macroActionsField = value;
@@ -143,129 +143,6 @@
         {
             get => clicksField;
             set => clicksField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class VoiceMacroProfileCommandsMacroAction
-    {
-
-        private byte macroTypeField;
-
-        private VoiceMacroProfileCommandsMacroActionKeyboard keyboardField;
-
-        private VoiceMacroProfileCommandsMacroActionWriteToLog writeToLogField;
-
-        /// <remarks/>
-        public byte MacroType
-        {
-            get => macroTypeField;
-            set => macroTypeField = value;
-        }
-
-        /// <remarks/>
-        public VoiceMacroProfileCommandsMacroActionKeyboard Keyboard
-        {
-            get => keyboardField;
-            set => keyboardField = value;
-        }
-
-        /// <remarks/>
-        public VoiceMacroProfileCommandsMacroActionWriteToLog WriteToLog
-        {
-            get => writeToLogField;
-            set => writeToLogField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class VoiceMacroProfileCommandsMacroActionKeyboard
-    {
-
-        private string keyField;
-
-        private byte clickDownUpField;
-
-        private byte clickDurationField;
-
-        /// <remarks/>
-        public string Key
-        {
-            get => keyField;
-            set => keyField = value;
-        }
-
-        /// <remarks/>
-        public byte ClickDownUp
-        {
-            get => clickDownUpField;
-            set => clickDownUpField = value;
-        }
-
-        /// <remarks/>
-        public byte ClickDuration
-        {
-            get => clickDurationField;
-            set => clickDurationField = value;
-        }
-    }
-
-    /// <remarks/>
-    [System.SerializableAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true)]
-    public partial class VoiceMacroProfileCommandsMacroActionWriteToLog
-    {
-
-        private string textField;
-
-        private string labelField;
-
-        private byte colorRField;
-
-        private byte colorGField;
-
-        private byte colorBField;
-
-        /// <remarks/>
-        public string Text
-        {
-            get => textField;
-            set => textField = value;
-        }
-
-        /// <remarks/>
-        public string Label
-        {
-            get => labelField;
-            set => labelField = value;
-        }
-
-        /// <remarks/>
-        public byte ColorR
-        {
-            get => colorRField;
-            set => colorRField = value;
-        }
-
-        /// <remarks/>
-        public byte ColorG
-        {
-            get => colorGField;
-            set => colorGField = value;
-        }
-
-        /// <remarks/>
-        public byte ColorB
-        {
-            get => colorBField;
-            set => colorBField = value;
         }
     }
 }

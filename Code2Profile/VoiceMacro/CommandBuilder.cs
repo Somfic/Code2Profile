@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace Code2Profile.VoiceMacro
 {
@@ -35,6 +37,7 @@ namespace Code2Profile.VoiceMacro
             return command;
         }
 
+
         /// <summary>
         /// Set the spoken phrase that triggers the command.
         /// </summary>
@@ -43,6 +46,35 @@ namespace Code2Profile.VoiceMacro
         public CommandBuilder UsePhrase(string phrase)
         {
             command.Phrase = phrase;
+            return this;
+        }
+
+        /// <summary>
+        /// Whether the phrase is enabled.
+        /// </summary>
+        /// <param name="usePhrase"></param>
+        /// <returns></returns>
+        public CommandBuilder UsePhrase(bool usePhrase)
+        {
+            command.UseRecognition = usePhrase;
+            return this;
+        }
+
+        /// <summary>
+        /// Add an action to the command.
+        /// </summary>
+        /// <param name="action">The action.</param>
+        /// <returns></returns>
+        public CommandBuilder AddAction(IAction action)
+        {
+            string actionType = action.GetType().Name.Replace("Action", string.Empty);
+            
+            MacroAction a = new MacroAction();
+
+            a.GetType().GetFields().First(x => x.Name == actionType).SetValue(a, action);
+
+            a.MacroType = a.GetMacroType();
+            command.MacroActions.Add(a);
             return this;
         }
     }

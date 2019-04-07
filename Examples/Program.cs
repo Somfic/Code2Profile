@@ -1,6 +1,7 @@
-﻿using Code2Profile.VoiceAttack;
+﻿
 using Code2Profile.VoiceMacro;
 using System.IO;
+using System.Windows.Forms;
 
 namespace Examples
 {
@@ -8,18 +9,12 @@ namespace Examples
     {
         private static void Main(string[] args)
         {
-            new VoiceAttackBuilder()
-                .CreateProfile("test")
-                        .AddCommand(new Code2Profile.VoiceAttack.CommandBuilder()
-                            .UsePhrase("Hello")
-                            .AddAction(new ActionSay("Hello there"))
-                        .BuildCommand())
-                .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
-
             new VoiceMacroBuilder()
                 .CreateProfile("test")
-                    .AddCommand(new Code2Profile.VoiceMacro.CommandBuilder()
-                        .UsePhrase("testing123!")
+                    .AddCommand(new CommandBuilder()
+                        .UsePhrase("Test command")
+                        .AddAction(new KeyboardAction() { Key = Keys.A })
+                        .AddAction(new SpeakTextAction() { Text = "Hello from C#!", Volume = 100, Speed = 0 })
                     .BuildCommand())
                 .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
         }

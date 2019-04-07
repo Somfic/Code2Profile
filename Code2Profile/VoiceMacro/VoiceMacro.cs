@@ -37,9 +37,8 @@ namespace Code2Profile.VoiceMacro
             c.UseRecognitionSpecified = true;
             c.UseRecognition = command.UseRecognition;
 
-            Console.WriteLine(Newtonsoft.Json.JsonConvert.SerializeObject(c, Newtonsoft.Json.Formatting.Indented));
-
-            Console.ReadKey();
+            //Add the actions.
+            c.MacroActions = command.MacroActions.ToArray();
 
             //Add the command.
             List<VoiceMacroProfileCommands> commands = vmp.Commands.ToList();
