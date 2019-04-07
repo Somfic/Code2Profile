@@ -15,6 +15,10 @@ namespace Examples
                         .UsePhrase("Test command")
                         .AddAction(new PauseAction() { Miliseconds = 10 })
                     .BuildCommand())
+                    .AddCommand(new CommandBuilder()
+                        .UsePhrase("Testing")
+                        .AddAction(new SpeakTextAction() {Text = "Hello!" })
+                    .BuildCommand())
                 .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
         }
     }

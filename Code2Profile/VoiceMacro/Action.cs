@@ -300,9 +300,9 @@ namespace Code2Profile.VoiceMacro
     public class SpeakTextAction : IAction
     {
         public string Text;
-        public int Volume;
+        public int Volume = 100;
         public int Speed;
-        public string Voice;
+        public string Voice = "Default";
         public bool Sync;
     }
 
