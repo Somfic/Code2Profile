@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Code2Profile.VoiceMacro
@@ -6,6 +7,13 @@ namespace Code2Profile.VoiceMacro
     public interface IAction { }
 
     //Custom actions for non-class actions.
+    public class ConditionAction : IAction
+    {
+        public string Condition;
+        public List<IAction> ActionsIfTrue;
+        public List<IAction> ActionsIfFalse;
+    }
+
     public enum StartStop { Stop, Start, Toggle }
     public enum MinResToggle { Minimize, Restore, Toggle }
     public enum CopyPaste { Copy, Paste }
@@ -103,7 +111,7 @@ namespace Code2Profile.VoiceMacro
         public short? StartStopShortCuts; // 8
         public short? MinRestToggleVM; // 9 (0 = minimize, 1 = restore, 2 = toggle)
         public CloseWindowAction CloseWindow; // 11
-        public WaitForWindow WaitForWindow; // 12
+        public WaitForWindowAction WaitForWindow; // 12
         public short? StartStopScheduler;  // 13
         public short? StartStopIgnoreCommands;  // 14
         public KillProcessAction KillProcess; // 15
@@ -135,9 +143,9 @@ namespace Code2Profile.VoiceMacro
         public ShowUIAction ShowUI; // 90
         public string Label; // 100
         public string GotoLabel; // 101
-        public IfElseIf IfElseIf; // 120
+        public IfElseIfAction IfElseIf; // 120
         public SendToPluginAction SendToPlugin; // 150
-        public SetVariable SetVariable; // 200
+        public SetVariableAction SetVariable; // 200
 
         //For XML serializer.
         public bool ShouldSerializePause() => Pause.HasValue;
@@ -258,10 +266,10 @@ namespace Code2Profile.VoiceMacro
     public class WriteToLogAction : IAction
     {
         public string Text;
-        public string Label;
-        public short ColorR;
-        public short ColorG;
-        public short ColorB;
+        public string Labe = "i";
+        public short ColorR = 125;
+        public short ColorG = 125;
+        public short ColorB = 255;
     }
 
     public class OpenFileAction : IAction
@@ -306,11 +314,11 @@ namespace Code2Profile.VoiceMacro
         public bool Sync;
     }
 
-    public class WaitForWindow
+    public class WaitForWindowAction : IAction
     {
         public string WindowName;
         public bool AbortTimeOut;
-        public long Timeout;
+        public long Timeout = 5000;
     }
 
     public class CloseWindowAction : IAction
@@ -357,7 +365,7 @@ namespace Code2Profile.VoiceMacro
         public long Timeout;
     }
 
-    public class OSDTextElement
+    public class OSDTextElementAction : IAction
     {
         public string Text;
         public short Align; // 0 = left, 1 = center, 2 = right
@@ -421,7 +429,7 @@ namespace Code2Profile.VoiceMacro
         public int Volume;
     }
 
-    public class IfElseIf
+    public class IfElseIfAction : IAction
     {
         public bool IfOrElseIf; // True = "If" or False = "ElseIf"
         public string Condition;
@@ -437,7 +445,7 @@ namespace Code2Profile.VoiceMacro
         public bool Synch;
     }
 
-    public class SetVariable
+    public class SetVariableAction : IAction
     {
         public string Name;
         public string Value;
@@ -517,7 +525,7 @@ namespace Code2Profile.VoiceMacro
     public class ShowOSDAction : IAction
     {
         public string OSDName;
-        public OSDTextElement[] OSDTextElements;
+        public OSDTextElementAction[] OSDTextElements;
         public short StartPosition;
         public int Width;
         public int Height;

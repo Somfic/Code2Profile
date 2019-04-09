@@ -87,6 +87,35 @@ namespace Code2Profile.VoiceMacro
             else if (actionType == "Comment") { a.Comment = ((CommentAction)action).WantedComment; }
             else if (actionType == "Label") { a.Label = ((LabelAction)action).WantedLabel; }
             else if (actionType == "GotoLabel") { a.GotoLabel = ((GotoLabelAction)action).WantedLabel; }
+            else if (actionType == "Condition")
+            {
+                //Custom code to add in conditions.
+                ConditionAction ac = (ConditionAction)action;
+
+                IfElseIfAction openingAction = new IfElseIfAction
+                {
+                    IfOrElseIf = true,
+                    Condition = ac.Condition
+                };
+
+                //Add the opening of the statement.
+                AddAction(openingAction);
+
+                //Add all the actions for when the statement is true.
+                ac.ActionsIfTrue.ForEach(x => AddAction(x));
+
+                //If the user has set actions for when the statement is false, add them.
+                if (ac.ActionsIfFalse.Count != 0)
+                {
+                    command.MacroActions.Add(new MacroAction() { MacroType = 121 });
+                    ac.ActionsIfFalse.ForEach(x => AddAction(x));
+                }
+
+                //Add the ending of the statement.
+                command.MacroActions.Add(new MacroAction() { MacroType = 122 });
+
+                return this;
+            }
             else { a.GetType().GetFields().FirstOrDefault(x => x.Name == actionType).SetValue(a, action); }
 
             a.MacroType = a.GetMacroType();
