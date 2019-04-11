@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace Code2Profile.VoiceMacro
@@ -10,8 +9,8 @@ namespace Code2Profile.VoiceMacro
     public class ConditionAction : IAction
     {
         public string Condition;
-        public List<IAction> ActionsIfTrue;
-        public List<IAction> ActionsIfFalse;
+        public List<IAction> ActionsIfTrue = new List<IAction>();
+        public List<IAction> ActionsIfFalse = new List<IAction>();
     }
 
     public enum StartStop { Stop, Start, Toggle }
@@ -68,7 +67,7 @@ namespace Code2Profile.VoiceMacro
         public string WantedEngine;
     }
 
-    public class BlockInputAction :  IAction
+    public class BlockInputAction : IAction
     {
         public bool DoBlocking;
     }
@@ -148,16 +147,55 @@ namespace Code2Profile.VoiceMacro
         public SetVariableAction SetVariable; // 200
 
         //For XML serializer.
-        public bool ShouldSerializePause() => Pause.HasValue;
-        public bool ShouldSerializeStartStopListen() => StartStopListen.HasValue;
-        public bool ShouldSerializeStartStopExecute() => StartStopExecute.HasValue;
-        public bool ShouldSerializeStartStopAutoProfile() => StartStopAutoProfile.HasValue;
-        public bool ShouldSerializeStartStopShortCuts() => StartStopShortCuts.HasValue;
-        public bool ShouldSerializeMinRestToggleVM() => MinRestToggleVM.HasValue;
-        public bool ShouldSerializeStartStopScheduler() => StartStopScheduler.HasValue;
-        public bool ShouldSerializeStartStopIgnoreCommands() => StartStopIgnoreCommands.HasValue;
-        public bool ShouldSerializeBlockInput() => BlockInput.HasValue;
-        public bool ShouldSerializeClipboard() => Clipboard.HasValue;
+        public bool ShouldSerializePause()
+        {
+            return Pause.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopListen()
+        {
+            return StartStopListen.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopExecute()
+        {
+            return StartStopExecute.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopAutoProfile()
+        {
+            return StartStopAutoProfile.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopShortCuts()
+        {
+            return StartStopShortCuts.HasValue;
+        }
+
+        public bool ShouldSerializeMinRestToggleVM()
+        {
+            return MinRestToggleVM.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopScheduler()
+        {
+            return StartStopScheduler.HasValue;
+        }
+
+        public bool ShouldSerializeStartStopIgnoreCommands()
+        {
+            return StartStopIgnoreCommands.HasValue;
+        }
+
+        public bool ShouldSerializeBlockInput()
+        {
+            return BlockInput.HasValue;
+        }
+
+        public bool ShouldSerializeClipboard()
+        {
+            return Clipboard.HasValue;
+        }
 
         internal int GetMacroType()
         {
@@ -214,7 +252,7 @@ namespace Code2Profile.VoiceMacro
         }
     }
 
-    public class KeyboardAction : IAction 
+    public class KeyboardAction : IAction
     {
         public Keys Key;
         public short ClickDownUp; // (0 = Click, 1 = Down, 2 = Up)
@@ -229,7 +267,7 @@ namespace Code2Profile.VoiceMacro
         public double ClickDuration;
     }
 
-    public class MouseAction : IAction 
+    public class MouseAction : IAction
     {
         public bool Move;
         public bool Click;

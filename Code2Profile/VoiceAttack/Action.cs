@@ -12,24 +12,24 @@ namespace Code2Profile.VoiceAttack
         ProfileCommandCommandAction GetAction();
     }
 
-    public class ActionKeyPress : IAction
+    public class KeyPressAction : IAction
     {
-        public ActionKeyPress(Keys key)
+        public KeyPressAction(Keys key)
         {
             KeyCode = key;
         }
 
-        public ActionKeyPress(char key)
+        public KeyPressAction(char key)
         {
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyPress(int key)
+        public KeyPressAction(int key)
         {
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyPress SetDuration(decimal duration)
+        public KeyPressAction SetDuration(decimal duration)
         {
             Duration = Math.Round(duration, 3);
             return this;
@@ -54,19 +54,19 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class ActionKeyDown : IAction
+    public class KeyDownAction : IAction
     {
-        public ActionKeyDown(Keys key)
+        public KeyDownAction(Keys key)
         {
             KeyCode = key;
         }
 
-        public ActionKeyDown(char key)
+        public KeyDownAction(char key)
         {
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyDown(int key)
+        public KeyDownAction(int key)
         {
             KeyCode = (Keys)key;
         }
@@ -88,19 +88,19 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class ActionKeyUp : IAction
+    public class KeyUpAction : IAction
     {
-        public ActionKeyUp(Keys key)
+        public KeyUpAction(Keys key)
         {
             KeyCode = key;
         }
 
-        public ActionKeyUp(char key)
+        public KeyUpAction(char key)
         {
             KeyCode = (Keys)key;
         }
 
-        public ActionKeyUp(int key)
+        public KeyUpAction(int key)
         {
             KeyCode = (Keys)key;
         }
@@ -122,9 +122,9 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class ActionPause : IAction
+    public class PauseAction : IAction
     {
-        public ActionPause(decimal duration)
+        public PauseAction(decimal duration)
         {
             Duration = duration;
         }
@@ -145,26 +145,26 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class ActionSay : IAction
+    public class SayAction : IAction
     {
-        public ActionSay(string sentence)
+        public SayAction(string sentence)
         {
             Sentence = sentence;
         }
 
-        public ActionSay SetVoice(string voice)
+        public SayAction SetVoice(string voice)
         {
             Voice = voice;
             return this;
         }
 
-        public ActionSay SetVolume(int volume)
+        public SayAction SetVolume(int volume)
         {
             Volume = volume;
             return this;
         }
 
-        public ActionSay SetSpeed(int speed)
+        public SayAction SetSpeed(int speed)
         {
             Speed = speed;
             return this;

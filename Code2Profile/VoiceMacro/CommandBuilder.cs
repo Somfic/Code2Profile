@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 namespace Code2Profile.VoiceMacro
 {
@@ -102,7 +100,10 @@ namespace Code2Profile.VoiceMacro
                 AddAction(openingAction);
 
                 //Add all the actions for when the statement is true.
-                ac.ActionsIfTrue.ForEach(x => AddAction(x));
+                if (ac.ActionsIfTrue.Count != 0)
+                {
+                    ac.ActionsIfTrue.ForEach(x => AddAction(x));
+                }
 
                 //If the user has set actions for when the statement is false, add them.
                 if (ac.ActionsIfFalse.Count != 0)

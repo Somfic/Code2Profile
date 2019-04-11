@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -40,30 +38,41 @@ namespace Code2Profile.VoiceAttack
         /// </summary>
         /// <param name="command">The command.</param>
         /// <returns></returns>
+        public VoiceAttackBuilder AddCommand(CommandBuilder command)
+        {
+            return AddCommand(command.BuildCommand());
+        }
+
+        /// <summary>
+        /// Add a new command to the profile.
+        /// </summary>
+        /// <param name="command">The command.</param>
+        /// <returns></returns>
         public VoiceAttackBuilder AddCommand(Command command)
         {
-            ProfileCommand c = new ProfileCommand();
-                
-            //Setup command from object.
-            c.CommandString = command.Phrase;
-            c.UseSpokenPhrase = command.IsVoiced; 
-            c.Async = command.IsAsync;
-            c.BaseId = command.ID.ToString();
-            c.Enabled = command.IsEnabled;
-            c.SessionEnabled = command.IsEnabled;
-            c.Id = command.ID.ToString();
+            ProfileCommand c = new ProfileCommand
+            {
+                //Setup command from object.
+                CommandString = command.Phrase,
+                UseSpokenPhrase = command.IsVoiced,
+                Async = command.IsAsync,
+                BaseId = command.ID.ToString(),
+                Enabled = command.IsEnabled,
+                SessionEnabled = command.IsEnabled,
+                Id = command.ID.ToString(),
 
-            //Standard stuff.
-            c.ExecType = 3;
-            c.ProcessOverrideActiveWindow = true;
-            c.LostFocusBackCompat = true;
-            c.OriginId = Guid.Empty.ToString();
-            c.SourceProfile = Guid.Empty.ToString();
-            c.lastEditedAction = Guid.Empty.ToString();
+                //Standard stuff.
+                ExecType = 3,
+                ProcessOverrideActiveWindow = true,
+                LostFocusBackCompat = true,
+                OriginId = Guid.Empty.ToString(),
+                SourceProfile = Guid.Empty.ToString(),
+                lastEditedAction = Guid.Empty.ToString()
+            };
 
             //Add the actions.
             List<ProfileCommandCommandAction> actions = new List<ProfileCommandCommandAction>();
-            foreach (var action in command.Actions)
+            foreach (IAction action in command.Actions)
             {
                 ProfileCommandCommandAction a = action.GetAction();
                 //a.KeyCodes = new ProfileCommandCommandActionKeyCodes();
@@ -93,8 +102,8 @@ namespace Code2Profile.VoiceAttack
             XmlSerializer xmlVap = new XmlSerializer(typeof(Profile));
             string xml = string.Empty;
 
-            var stringWriter = new StringWriter();
-            var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
+            StringWriter stringWriter = new StringWriter();
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() { Indent = true };
             XmlWriter xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings);
 
             xmlVap.Serialize(xmlWriter, vap);

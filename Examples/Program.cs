@@ -1,11 +1,10 @@
-﻿
-using Code2Profile.VoiceMacro;
-using System.IO;
-using System.Windows.Forms;
+﻿using System.IO;
 
-namespace Examples
+namespace Examples.VoiceMacro
 {
-    internal class Program
+    using Code2Profile.VoiceMacro;
+
+    internal class VoiceMacro
     {
         private static void Main(string[] args)
         {
@@ -13,12 +12,31 @@ namespace Examples
                 .CreateProfile("test")
                     .AddCommand(new CommandBuilder()
                         .UsePhrase("Test command")
-                        .AddAction(new PauseAction() { Miliseconds = 10 })
-                    .BuildCommand())
+                        .AddAction(new PauseAction() { Miliseconds = 10 }))
                     .AddCommand(new CommandBuilder()
                         .UsePhrase("Testing")
-                        .AddAction(new SpeakTextAction() {Text = "Hello!" })
-                    .BuildCommand())
+                        .AddAction(new SpeakTextAction() { Text = "Hello!" }))
+                .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
+        }
+    }
+}
+
+namespace Examples.VoiceAttack
+{
+    using Code2Profile.VoiceAttack;
+
+    internal class VoiceAttack
+    {
+        private static void Main(string[] args)
+        {
+            new VoiceAttackBuilder()
+                .CreateProfile("test")
+                    .AddCommand(new CommandBuilder()
+                        .UsePhrase("Test command")
+                        .AddAction(new PauseAction(10))
+                    .AddCommand(new CommandBuilder()
+                        .UsePhrase("Testing")
+                        .AddAction(new SpeakTextAction() { Text = "Hello!" }))
                 .BuildProfile(new DirectoryInfo(Directory.GetCurrentDirectory()));
         }
     }

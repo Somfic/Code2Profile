@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace Code2Profile.VoiceAttack
 {
@@ -33,7 +32,7 @@ namespace Code2Profile.VoiceAttack
             command.ID = Guid.NewGuid();
             return command;
         }
- 
+
         /// <summary>
         /// Set the spoken phrase that triggers the command.
         /// </summary>

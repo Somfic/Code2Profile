@@ -2,8 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Xml;
 using System.Xml.Serialization;
 
@@ -28,17 +26,19 @@ namespace Code2Profile.VoiceMacro
 
         public VoiceMacroBuilder AddCommand(Command command)
         {
-            VoiceMacroProfileCommands c = new VoiceMacroProfileCommands();
-            
-            //Setup from object.
-            c.GUID = command.ID.ToString();
-            c.RecocnitionText = command.Phrase;
-            c.ShortCut = command.Shortcut;
-            c.UseRecognitionSpecified = true;
-            c.UseRecognition = command.UseRecognition;
+            VoiceMacroProfileCommands c = new VoiceMacroProfileCommands
+            {
 
-            //Add the actions.
-            c.MacroActions = command.MacroActions.ToArray();
+                //Setup from object.
+                GUID = command.ID.ToString(),
+                RecocnitionText = command.Phrase,
+                ShortCut = command.Shortcut,
+                UseRecognitionSpecified = true,
+                UseRecognition = command.UseRecognition,
+
+                //Add the actions.
+                MacroActions = command.MacroActions.ToArray()
+            };
 
             //Add the command.
             List<VoiceMacroProfileCommands> commands = vmp.Commands.ToList();
@@ -47,6 +47,13 @@ namespace Code2Profile.VoiceMacro
 
             return this;
         }
+
+
+        public VoiceMacroBuilder AddCommand(CommandBuilder builder)
+        {
+            return AddCommand(builder.BuildCommand());
+        }
+
 
         /// <summary>
         /// Export the profile as a .xml file.
@@ -58,8 +65,8 @@ namespace Code2Profile.VoiceMacro
             XmlSerializer xmlVap = new XmlSerializer(typeof(VoiceMacroProfile));
             string xml = string.Empty;
 
-            var stringWriter = new StringWriter();
-            var xmlWriterSettings = new XmlWriterSettings() { Indent = true };
+            StringWriter stringWriter = new StringWriter();
+            XmlWriterSettings xmlWriterSettings = new XmlWriterSettings() { Indent = true };
             XmlWriter xmlWriter = XmlWriter.Create(stringWriter, xmlWriterSettings);
 
             xmlVap.Serialize(xmlWriter, vmp);
