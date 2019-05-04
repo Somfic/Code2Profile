@@ -93,7 +93,7 @@ namespace Code2Profile.VoiceAttack
         /// </summary>
         /// <param name="action">The action.</param>
         /// <returns></returns>
-        public CommandBuilder AddAction(IAction action)
+        public CommandBuilder AddAction(IVoiceAttackAction action)
         {
             command.Actions.Add(action);
             return this;

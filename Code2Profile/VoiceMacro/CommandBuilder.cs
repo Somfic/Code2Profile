@@ -63,7 +63,7 @@ namespace Code2Profile.VoiceMacro
         /// </summary>
         /// <param name="action">The action.</param>
         /// <returns></returns>
-        public CommandBuilder AddAction(IAction action)
+        public CommandBuilder AddAction(IVoiceMacroAction action)
         {
             string actionType = action.GetType().Name.Replace("Action", string.Empty);
 

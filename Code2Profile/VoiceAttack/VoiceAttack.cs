@@ -72,7 +72,7 @@ namespace Code2Profile.VoiceAttack
 
             //Add the actions.
             List<ProfileCommandCommandAction> actions = new List<ProfileCommandCommandAction>();
-            foreach (IAction action in command.Actions)
+            foreach (IVoiceAttackAction action in command.Actions)
             {
                 ProfileCommandCommandAction a = action.GetAction();
                 //a.KeyCodes = new ProfileCommandCommandActionKeyCodes();

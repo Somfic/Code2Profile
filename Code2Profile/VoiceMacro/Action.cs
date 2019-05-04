@@ -3,21 +3,21 @@ using System.Windows.Forms;
 
 namespace Code2Profile.VoiceMacro
 {
-    public interface IAction { }
+    public interface IVoiceMacroAction { }
 
     //Custom actions for non-class actions.
-    public class ConditionAction : IAction
+    public class ConditionAction : IVoiceMacroAction
     {
         public string Condition;
-        public List<IAction> ActionsIfTrue = new List<IAction>();
-        public List<IAction> ActionsIfFalse = new List<IAction>();
+        public List<IVoiceMacroAction> ActionsIfTrue = new List<IVoiceMacroAction>();
+        public List<IVoiceMacroAction> ActionsIfFalse = new List<IVoiceMacroAction>();
     }
 
     public enum StartStop { Stop, Start, Toggle }
     public enum MinResToggle { Minimize, Restore, Toggle }
     public enum CopyPaste { Copy, Paste }
 
-    public class PauseAction : IAction
+    public class PauseAction : IVoiceMacroAction
     {
         public int Miliseconds;
     }
@@ -27,72 +27,72 @@ namespace Code2Profile.VoiceMacro
         public string Windowname;
     }
 
-    public class StartStopListenAction : IAction
+    public class StartStopListenAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class StartStopExecuteAction : IAction
+    public class StartStopExecuteAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class StartStopAutoProfileAction : IAction
+    public class StartStopAutoProfileAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class StartStopShortCutsAction : IAction
+    public class StartStopShortCutsAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class MinRestToggleVMAction : IAction
+    public class MinRestToggleVMAction : IVoiceMacroAction
     {
         public MinResToggle WantedAction;
     }
 
-    public class StartStopSchedulerAction : IAction
+    public class StartStopSchedulerAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class StartStopIgnoreCommandsAction : IAction
+    public class StartStopIgnoreCommandsAction : IVoiceMacroAction
     {
         public StartStop WantedAction;
     }
 
-    public class ChangeEngineAction : IAction
+    public class ChangeEngineAction : IVoiceMacroAction
     {
         public string WantedEngine;
     }
 
-    public class BlockInputAction : IAction
+    public class BlockInputAction : IVoiceMacroAction
     {
         public bool DoBlocking;
     }
 
-    public class ClipboardAction : IAction
+    public class ClipboardAction : IVoiceMacroAction
     {
         public CopyPaste WantedAction;
     }
 
-    public class HideOSDAction : IAction
+    public class HideOSDAction : IVoiceMacroAction
     {
         public string WantedOSD;
     }
 
-    public class CommentAction : IAction
+    public class CommentAction : IVoiceMacroAction
     {
         public string WantedComment;
     }
 
-    public class LabelAction : IAction
+    public class LabelAction : IVoiceMacroAction
     {
         public string WantedLabel;
     }
 
-    public class GotoLabelAction : IAction
+    public class GotoLabelAction : IVoiceMacroAction
     {
         public string WantedLabel;
     }
@@ -252,7 +252,7 @@ namespace Code2Profile.VoiceMacro
         }
     }
 
-    public class KeyboardAction : IAction
+    public class KeyboardAction : IVoiceMacroAction
     {
         public Keys Key;
         public short ClickDownUp; // (0 = Click, 1 = Down, 2 = Up)
@@ -267,7 +267,7 @@ namespace Code2Profile.VoiceMacro
         public double ClickDuration;
     }
 
-    public class MouseAction : IAction
+    public class MouseAction : IVoiceMacroAction
     {
         public bool Move;
         public bool Click;
@@ -301,7 +301,7 @@ namespace Code2Profile.VoiceMacro
         public string Height;
     }
 
-    public class WriteToLogAction : IAction
+    public class WriteToLogAction : IVoiceMacroAction
     {
         public string Text;
         public string Labe = "i";
@@ -310,7 +310,7 @@ namespace Code2Profile.VoiceMacro
         public short ColorB = 255;
     }
 
-    public class OpenFileAction : IAction
+    public class OpenFileAction : IVoiceMacroAction
     {
         public string FileName;
         public string Arguments;
@@ -320,14 +320,14 @@ namespace Code2Profile.VoiceMacro
         public bool WaitForExit;
     }
 
-    public class SendVirtualKeysAction : IAction
+    public class SendVirtualKeysAction : IVoiceMacroAction
     {
         public string KeyCodes;
         public int ClickDuration;
         public int ClickDelay;
     }
 
-    public class InsertTextAction : IAction
+    public class InsertTextAction : IVoiceMacroAction
     {
         public string Text;
         public bool UseKeyboard;
@@ -336,14 +336,14 @@ namespace Code2Profile.VoiceMacro
         public int ClickDelay;
     }
 
-    public class PlaySoundAction : IAction
+    public class PlaySoundAction : IVoiceMacroAction
     {
         public string AudioFile;
         public string Volume;
         public bool Sync;
     }
 
-    public class SpeakTextAction : IAction
+    public class SpeakTextAction : IVoiceMacroAction
     {
         public string Text;
         public int Volume = 100;
@@ -352,29 +352,29 @@ namespace Code2Profile.VoiceMacro
         public bool Sync;
     }
 
-    public class WaitForWindowAction : IAction
+    public class WaitForWindowAction : IVoiceMacroAction
     {
         public string WindowName;
         public bool AbortTimeOut;
         public long Timeout = 5000;
     }
 
-    public class CloseWindowAction : IAction
+    public class CloseWindowAction : IVoiceMacroAction
     {
         public string WindowName;
     }
 
-    public class KillProcessAction : IAction
+    public class KillProcessAction : IVoiceMacroAction
     {
         public string ProcessName;
     }
 
-    public class SwitchToProfileAction : IAction
+    public class SwitchToProfileAction : IVoiceMacroAction
     {
         public string ProfileGUID;
     }
 
-    public class RunOtherMacroAction : IAction
+    public class RunOtherMacroAction : IVoiceMacroAction
     {
         public string ProfileGUID;
         public string MacroGUID;
@@ -383,13 +383,13 @@ namespace Code2Profile.VoiceMacro
         public bool Sync;
     }
 
-    public class LoopAction : IAction
+    public class LoopAction : IVoiceMacroAction
     {
         public bool LoopStartStop; // True = Start, False = Stop
         public string LoopCount;
     }
 
-    public class ShowDialogAction : IAction
+    public class ShowDialogAction : IVoiceMacroAction
     {
         public string Title;
         public string Text;
@@ -403,7 +403,7 @@ namespace Code2Profile.VoiceMacro
         public long Timeout;
     }
 
-    public class OSDTextElementAction : IAction
+    public class OSDTextElementAction : IVoiceMacroAction
     {
         public string Text;
         public short Align; // 0 = left, 1 = center, 2 = right
@@ -422,17 +422,17 @@ namespace Code2Profile.VoiceMacro
         public byte GDICharset;
     }
 
-    public class ChangeTargetWindowAction : IAction
+    public class ChangeTargetWindowAction : IVoiceMacroAction
     {
         public string TargetWindow;
     }
 
-    public class ChangeWindowTitleAction : IAction
+    public class ChangeWindowTitleAction : IVoiceMacroAction
     {
         public string Title;
     }
 
-    public class ResizeMoveWindowAction : IAction
+    public class ResizeMoveWindowAction : IVoiceMacroAction
     {
         public string WindowTitle;
         public bool Resize;
@@ -443,7 +443,7 @@ namespace Code2Profile.VoiceMacro
         public int MoveY;
     }
 
-    public class ChangeWindowStyleAction : IAction
+    public class ChangeWindowStyleAction : IVoiceMacroAction
     {
         public string WindowTitle;
         public bool SetStyle;
@@ -454,7 +454,7 @@ namespace Code2Profile.VoiceMacro
         public bool TopMost;
     }
 
-    public class SpeechToTextAction : IAction
+    public class SpeechToTextAction : IVoiceMacroAction
     {
         public string SpeechToTextFile;
         public ttsPhrase[] ttsPhrases;
@@ -467,13 +467,13 @@ namespace Code2Profile.VoiceMacro
         public int Volume;
     }
 
-    public class IfElseIfAction : IAction
+    public class IfElseIfAction : IVoiceMacroAction
     {
         public bool IfOrElseIf; // True = "If" or False = "ElseIf"
         public string Condition;
     }
 
-    public class SendToPluginAction : IAction
+    public class SendToPluginAction : IVoiceMacroAction
     {
         public string PluginName;
         public string PluginID;
@@ -483,7 +483,7 @@ namespace Code2Profile.VoiceMacro
         public bool Synch;
     }
 
-    public class SetVariableAction : IAction
+    public class SetVariableAction : IVoiceMacroAction
     {
         public string Name;
         public string Value;
@@ -501,13 +501,13 @@ namespace Code2Profile.VoiceMacro
         public int IndexOffset;
     }
 
-    public class ToggleAction : IAction
+    public class ToggleAction : IVoiceMacroAction
     {
         public short ToggleOnOff; // 1 = on , 0 = off
         public bool Toggle; // DONT SAVE!
     }
 
-    public class WaitForPixelAction : IAction
+    public class WaitForPixelAction : IVoiceMacroAction
     {
         public bool RelativeToWindowPos;
         // 0 = TopLeft, 1 = TopRight, 2 = BottomLeft, 3 = BottomRight, 4 = Center
@@ -524,7 +524,7 @@ namespace Code2Profile.VoiceMacro
     }
 
     // 68
-    public class SetStateAction : IAction
+    public class SetStateAction : IVoiceMacroAction
     {
         public string ProfileGUID;
         public string MacroGUID;
@@ -534,7 +534,7 @@ namespace Code2Profile.VoiceMacro
         public int RotateSetIndex;
     }
 
-    public class GetKeyStateAction : IAction
+    public class GetKeyStateAction : IVoiceMacroAction
     {
         public string VariableName;
         public Keys Key;
@@ -545,7 +545,7 @@ namespace Code2Profile.VoiceMacro
     }
 
     // ShowUI
-    public class ShowUIAction : IAction
+    public class ShowUIAction : IVoiceMacroAction
     {
         // Public UIName As String
         public string UIText;
@@ -560,7 +560,7 @@ namespace Code2Profile.VoiceMacro
         public UIElement[] UIElements;
     }
 
-    public class ShowOSDAction : IAction
+    public class ShowOSDAction : IVoiceMacroAction
     {
         public string OSDName;
         public OSDTextElementAction[] OSDTextElements;

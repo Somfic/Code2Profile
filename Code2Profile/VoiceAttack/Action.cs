@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace Code2Profile.VoiceAttack
 {
-    public interface IAction
+    public interface IVoiceAttackAction
     {
         Guid ID { get; }
         bool Enabled { get; }
@@ -12,7 +12,7 @@ namespace Code2Profile.VoiceAttack
         ProfileCommandCommandAction GetAction();
     }
 
-    public class KeyPressAction : IAction
+    public class KeyPressAction : IVoiceAttackAction
     {
         public KeyPressAction(Keys key)
         {
@@ -54,7 +54,7 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class KeyDownAction : IAction
+    public class KeyDownAction : IVoiceAttackAction
     {
         public KeyDownAction(Keys key)
         {
@@ -88,7 +88,7 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class KeyUpAction : IAction
+    public class KeyUpAction : IVoiceAttackAction
     {
         public KeyUpAction(Keys key)
         {
@@ -122,7 +122,7 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class PauseAction : IAction
+    public class PauseAction : IVoiceAttackAction
     {
         public PauseAction(decimal duration)
         {
@@ -145,7 +145,7 @@ namespace Code2Profile.VoiceAttack
         }
     }
 
-    public class SayAction : IAction
+    public class SayAction : IVoiceAttackAction
     {
         public SayAction(string sentence)
         {

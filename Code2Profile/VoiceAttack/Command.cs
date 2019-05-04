@@ -11,6 +11,6 @@ namespace Code2Profile.VoiceAttack
         public bool IsAsync { get; internal set; } = false;
         public bool IsVoiced { get; internal set; } = true;
         public int MinimalConfidence { get; internal set; } = 0;
-        public List<IAction> Actions { get; internal set; } = new List<IAction>();
+        public List<IVoiceAttackAction> Actions { get; internal set; } = new List<IVoiceAttackAction>();
     }
 }
